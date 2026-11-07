@@ -250,7 +250,7 @@ main { padding-block: 8px 48px; }
       return dir * main(a, b) || (key === "autor" ? txt("titulo")(a, b) : txt("autor")(a, b) || txt("titulo")(a, b));
     });
     document.querySelectorAll("#head .sort").forEach(function (btn) {
-      var on = btn.dataset.sort === key;
+      var on = btn.dataset.sort === key && o !== "autor-asc";
       btn.classList.toggle("active", on);
       btn.classList.toggle("desc", on && dir === -1);
       btn.setAttribute("aria-sort", on ? (dir === 1 ? "ascending" : "descending") : "none");
