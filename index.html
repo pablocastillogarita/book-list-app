@@ -171,7 +171,7 @@ main { padding-block: 8px 48px; }
         <option value="tengo-desc">Los que tengo primero</option>
         <option value="tengo-asc">Los que me faltan primero</option>
       </select></label>
-      <button class="reset" id="reset" type="button">Quitar filtros</button>
+      <button class="reset" id="reset" type="button">Quitar filtros y orden</button>
     </div>
     <div class="count" id="count" aria-live="polite"></div>
   </div>
@@ -283,6 +283,7 @@ main { padding-block: 8px 48px; }
   ids.forEach(function (id) { $(id).addEventListener(id === "q" ? "input" : "change", render); });
   $("reset").addEventListener("click", function () {
     $("q").value = ""; ["f-genero", "f-dif", "f-largo", "f-tengo"].forEach(function (id) { $(id).value = ""; });
+    $("f-orden").value = "autor-asc";
     render();
   });
   $("head").addEventListener("click", function (e) {
