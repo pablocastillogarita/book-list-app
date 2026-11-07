@@ -3,7 +3,7 @@ window.LIBROS = [
  {
   "titulo": "El sueño de los héroes",
   "autor": "Adolfo Bioy Casares",
-  "genero": "Fantástico / psicológico",
+  "genero": "Fantástico / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -12,7 +12,7 @@ window.LIBROS = [
  {
   "titulo": "Diario de la guerra del cerdo",
   "autor": "Adolfo Bioy Casares",
-  "genero": "Distopía / fantástico",
+  "genero": "Distopía / Fantástico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -21,7 +21,7 @@ window.LIBROS = [
  {
   "titulo": "Plan de evasión",
   "autor": "Adolfo Bioy Casares",
-  "genero": "Ciencia ficción / fantástico",
+  "genero": "Ciencia ficción / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -30,8 +30,8 @@ window.LIBROS = [
  {
   "titulo": "Asesinato en el Orient Express",
   "autor": "Agatha Christie",
-  "genero": "Misterio / detectives",
-  "dificultad": 2,
+  "genero": "Misterio",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": true,
   "trata": "Poirot investiga un asesinato ocurrido en un tren aparentemente aislado."
@@ -66,7 +66,7 @@ window.LIBROS = [
  {
   "titulo": "Cadáver exquisito",
   "autor": "Agustina Bazterrica",
-  "genero": "Distopía / terror",
+  "genero": "Distopía / Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -75,7 +75,7 @@ window.LIBROS = [
  {
   "titulo": "Las indignas",
   "autor": "Agustina Bazterrica",
-  "genero": "Distopía / terror",
+  "genero": "Distopía / Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -84,7 +84,7 @@ window.LIBROS = [
  {
   "titulo": "El extranjero",
   "autor": "Albert Camus",
-  "genero": "Existencialismo / absurdo",
+  "genero": "Existencialismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -102,7 +102,7 @@ window.LIBROS = [
  {
   "titulo": "La peste",
   "autor": "Albert Camus",
-  "genero": "Existencialismo / alegoría",
+  "genero": "Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -120,7 +120,7 @@ window.LIBROS = [
  {
   "titulo": "La última inocencia",
   "autor": "Alejandra Pizarnik",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -138,7 +138,7 @@ window.LIBROS = [
  {
   "titulo": "La paciente silenciosa",
   "autor": "Alex Michaelides",
-  "genero": "Thriller psicológico",
+  "genero": "Thriller / Psicológico",
   "dificultad": 2,
   "largo": "Medio",
   "tengo": false,
@@ -147,7 +147,7 @@ window.LIBROS = [
  {
   "titulo": "El conde de Montecristo",
   "autor": "Alexandre Dumas",
-  "genero": "Aventura / histórico",
+  "genero": "Aventura / Histórico",
   "dificultad": 3,
   "largo": "Muy largo",
   "tengo": true,
@@ -156,7 +156,7 @@ window.LIBROS = [
  {
   "titulo": "La dama de las camelias",
   "autor": "Alexandre Dumas hijo",
-  "genero": "Romance / drama",
+  "genero": "Romance / Drama",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -165,7 +165,7 @@ window.LIBROS = [
  {
   "titulo": "Poemas de amor y otros poemas de amor",
   "autor": "Alfonsina Storni",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -174,7 +174,7 @@ window.LIBROS = [
  {
   "titulo": "Antología mayor",
   "autor": "Alfonsina Storni",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -183,7 +183,7 @@ window.LIBROS = [
  {
   "titulo": "Metafísica de los tubos",
   "autor": "Amélie Nothomb",
-  "genero": "Autobiográfico / humor",
+  "genero": "Humor y sátira",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -192,7 +192,7 @@ window.LIBROS = [
  {
   "titulo": "Estupor y temblores",
   "autor": "Amélie Nothomb",
-  "genero": "Autobiográfico / satírico",
+  "genero": "Humor y sátira",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -201,7 +201,7 @@ window.LIBROS = [
  {
   "titulo": "Cosmética del enemigo",
   "autor": "Amélie Nothomb",
-  "genero": "Psicológico / thriller",
+  "genero": "Psicológico / Thriller",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -210,7 +210,7 @@ window.LIBROS = [
  {
   "titulo": "Ácido sulfúrico",
   "autor": "Amélie Nothomb",
-  "genero": "Distopía / sátira",
+  "genero": "Distopía / Humor y sátira",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -228,7 +228,7 @@ window.LIBROS = [
  {
   "titulo": "Diarios",
   "autor": "Anaïs Nin",
-  "genero": "Diario / autobiografía",
+  "genero": "No ficción",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": false,
@@ -237,7 +237,7 @@ window.LIBROS = [
  {
   "titulo": "Mal de amores",
   "autor": "Ángeles Mastretta",
-  "genero": "Romance / realismo",
+  "genero": "Romance / Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -246,7 +246,7 @@ window.LIBROS = [
  {
   "titulo": "La inquilina de Wildfell Hall",
   "autor": "Anne Brontë",
-  "genero": "Romance / gótico",
+  "genero": "Romance / Gótico",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -255,7 +255,7 @@ window.LIBROS = [
  {
   "titulo": "El acontecimiento",
   "autor": "Annie Ernaux",
-  "genero": "Autobiografía / social",
+  "genero": "No ficción",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -264,7 +264,7 @@ window.LIBROS = [
  {
   "titulo": "Lady Anna",
   "autor": "Anthony Trollope",
-  "genero": "Romance / clásico",
+  "genero": "Romance",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -273,7 +273,7 @@ window.LIBROS = [
  {
   "titulo": "Zama",
   "autor": "Antonio Di Benedetto",
-  "genero": "Existencialismo / histórico",
+  "genero": "Existencialismo / Histórico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -282,7 +282,7 @@ window.LIBROS = [
  {
   "titulo": "Matate, amor",
   "autor": "Ariana Harwicz",
-  "genero": "Psicológico / contemporáneo",
+  "genero": "Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -291,7 +291,7 @@ window.LIBROS = [
  {
   "titulo": "2001: Una odisea espacial",
   "autor": "Arthur C. Clarke",
-  "genero": "Ciencia ficción filosófica",
+  "genero": "Ciencia ficción / Filosófico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -301,7 +301,7 @@ window.LIBROS = [
   "titulo": "El jardín de algún día",
   "autor": "Ashley Poston",
   "genero": "Romance",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Sunny, una jardinera, vuelve a una mansión histórica de Maine para trabajar como jefa de jardineros tras la muerte de su mejor amiga, y descubre un jardín mágico escondido en la finca."
@@ -309,7 +309,7 @@ window.LIBROS = [
  {
   "titulo": "Las primas",
   "autor": "Aurora Venturini",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo / Humor y sátira",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -318,7 +318,7 @@ window.LIBROS = [
  {
   "titulo": "Drácula",
   "autor": "Bram Stoker",
-  "genero": "Terror gótico",
+  "genero": "Gótico / Terror",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -336,7 +336,7 @@ window.LIBROS = [
  {
   "titulo": "La sociedad del cansancio",
   "autor": "Byung-Chul Han",
-  "genero": "Ensayo / filosofía",
+  "genero": "Filosófico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -363,7 +363,7 @@ window.LIBROS = [
  {
   "titulo": "La muerte de Artemio Cruz",
   "autor": "Carlos Fuentes",
-  "genero": "Realismo / histórico",
+  "genero": "Realismo / Histórico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -372,7 +372,7 @@ window.LIBROS = [
  {
   "titulo": "La sombra del viento",
   "autor": "Carlos Ruiz Zafón",
-  "genero": "Misterio / gótico",
+  "genero": "Misterio / Gótico",
   "dificultad": 2,
   "largo": "Largo",
   "tengo": false,
@@ -390,7 +390,7 @@ window.LIBROS = [
  {
   "titulo": "El corazón es un cazador solitario",
   "autor": "Carson McCullers",
-  "genero": "Psicológico / social",
+  "genero": "Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -399,7 +399,7 @@ window.LIBROS = [
  {
   "titulo": "Cartero",
   "autor": "Charles Bukowski",
-  "genero": "Realismo / autobiográfico",
+  "genero": "Realismo",
   "dificultad": 2,
   "largo": "Medio",
   "tengo": false,
@@ -418,7 +418,7 @@ window.LIBROS = [
   "titulo": "La chica que se llevaron",
   "autor": "Charlie Donlea",
   "genero": "Thriller",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Dos mujeres quedan ligadas a la desaparición de Nicole Cutty: Megan, que escapó tras un secuestro, y Livia, su hermana, forense, que busca respuestas."
@@ -426,7 +426,7 @@ window.LIBROS = [
  {
   "titulo": "Jane Eyre",
   "autor": "Charlotte Brontë",
-  "genero": "Gótico / romance",
+  "genero": "Gótico / Romance",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": true,
@@ -435,7 +435,7 @@ window.LIBROS = [
  {
   "titulo": "El papel pintado de amarillo",
   "autor": "Charlotte Perkins Gilman",
-  "genero": "Terror psicológico",
+  "genero": "Terror / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -444,7 +444,7 @@ window.LIBROS = [
  {
   "titulo": "La hora de la estrella",
   "autor": "Clarice Lispector",
-  "genero": "Existencialismo / experimental",
+  "genero": "Existencialismo / Experimental",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -453,7 +453,7 @@ window.LIBROS = [
  {
   "titulo": "La pasión según G.H.",
   "autor": "Clarice Lispector",
-  "genero": "Filosófico / existencialismo",
+  "genero": "Filosófico / Existencialismo",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": false,
@@ -462,7 +462,7 @@ window.LIBROS = [
  {
   "titulo": "Un soplo de vida",
   "autor": "Clarice Lispector",
-  "genero": "Filosófico / experimental",
+  "genero": "Filosófico / Experimental",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": true,
@@ -471,7 +471,7 @@ window.LIBROS = [
  {
   "titulo": "Cerca del corazón salvaje",
   "autor": "Clarice Lispector",
-  "genero": "Psicológico / experimental",
+  "genero": "Psicológico / Experimental",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": true,
@@ -480,7 +480,7 @@ window.LIBROS = [
  {
   "titulo": "Altasangre",
   "autor": "Claudia Amador",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -489,7 +489,7 @@ window.LIBROS = [
  {
   "titulo": "Catedrales",
   "autor": "Claudia Piñeiro",
-  "genero": "Thriller / social",
+  "genero": "Thriller",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -499,7 +499,7 @@ window.LIBROS = [
   "titulo": "Las hermanas Blue",
   "autor": "Coco Mellors",
   "genero": "Romance",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Un año después de la muerte de su hermana Nicky, tres hermanas se reúnen en Nueva York para vaciar el departamento de su infancia, mientras cada una lidia con su duelo y sus propias crisis."
@@ -507,8 +507,8 @@ window.LIBROS = [
  {
   "titulo": "Verity",
   "autor": "Colleen Hoover",
-  "genero": "Thriller psicológico",
-  "dificultad": 2,
+  "genero": "Thriller / Psicológico",
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Una escritora contratada para terminar la saga de una autora accidentada encuentra un manuscrito inquietante que cambia la forma de ver a su autora."
@@ -516,7 +516,7 @@ window.LIBROS = [
  {
   "titulo": "Meridiano de sangre",
   "autor": "Cormac McCarthy",
-  "genero": "Western / violencia",
+  "genero": "Western",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": false,
@@ -525,7 +525,7 @@ window.LIBROS = [
  {
   "titulo": "Hijo de Dios",
   "autor": "Cormac McCarthy",
-  "genero": "Literatura / violencia",
+  "genero": "Gótico / Realismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -534,7 +534,7 @@ window.LIBROS = [
  {
   "titulo": "Divina comedia",
   "autor": "Dante Alighieri",
-  "genero": "Poesía / épica",
+  "genero": "Épica",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -543,7 +543,7 @@ window.LIBROS = [
  {
   "titulo": "El secreto del Bosque Viejo",
   "autor": "Dino Buzzati",
-  "genero": "Fantasía / fábula",
+  "genero": "Fantasía / Fábula",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -552,7 +552,7 @@ window.LIBROS = [
  {
   "titulo": "Las noches difíciles",
   "autor": "Dino Buzzati",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -561,7 +561,7 @@ window.LIBROS = [
  {
   "titulo": "El desierto de los tártaros",
   "autor": "Dino Buzzati",
-  "genero": "Existencialismo / alegoría",
+  "genero": "Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -570,7 +570,7 @@ window.LIBROS = [
  {
   "titulo": "Sesenta relatos",
   "autor": "Dino Buzzati",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -579,7 +579,7 @@ window.LIBROS = [
  {
   "titulo": "Ojos de agua",
   "autor": "Domingo Villar",
-  "genero": "Misterio / detectives",
+  "genero": "Misterio",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -588,7 +588,7 @@ window.LIBROS = [
  {
   "titulo": "El cuaderno dorado",
   "autor": "Doris Lessing",
-  "genero": "Feminismo / experimental",
+  "genero": "Feminismo / Experimental",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -598,15 +598,15 @@ window.LIBROS = [
   "titulo": "El jardín de las mariposas",
   "autor": "Dot Hutchison",
   "genero": "Thriller",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Una superviviente cuenta a agentes del FBI el horror que vivió tras ser secuestrada junto a otras chicas por un asesino en serie que colecciona mariposas."
  },
  {
   "titulo": "Ese maldito yo",
-  "autor": "E. M. Cioran",
-  "genero": "Filosofía / aforismos",
+  "autor": "Emil Cioran",
+  "genero": "Filosófico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -615,7 +615,7 @@ window.LIBROS = [
  {
   "titulo": "La máscara de la Muerte Roja",
   "autor": "Edgar Allan Poe",
-  "genero": "Terror gótico",
+  "genero": "Gótico / Terror",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -624,7 +624,7 @@ window.LIBROS = [
  {
   "titulo": "Los crímenes de la calle Morgue",
   "autor": "Edgar Allan Poe",
-  "genero": "Misterio / detectives",
+  "genero": "Misterio",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -633,7 +633,7 @@ window.LIBROS = [
  {
   "titulo": "El gato negro",
   "autor": "Edgar Allan Poe",
-  "genero": "Terror psicológico",
+  "genero": "Terror / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -642,7 +642,7 @@ window.LIBROS = [
  {
   "titulo": "El corazón delator",
   "autor": "Edgar Allan Poe",
-  "genero": "Terror psicológico",
+  "genero": "Terror / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -651,7 +651,7 @@ window.LIBROS = [
  {
   "titulo": "El continente",
   "autor": "Eduardo Montesinos",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -660,7 +660,7 @@ window.LIBROS = [
  {
   "titulo": "El cielo de la selva",
   "autor": "Elaine Vilar Madruga",
-  "genero": "Literatura contemporánea",
+  "genero": "Fantástico / Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -669,7 +669,7 @@ window.LIBROS = [
  {
   "titulo": "Donde termina el verano",
   "autor": "Elma Correa",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -678,7 +678,7 @@ window.LIBROS = [
  {
   "titulo": "Un hogar sólido",
   "autor": "Elena Garro",
-  "genero": "Teatro / fantástico",
+  "genero": "Fantástico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -687,7 +687,7 @@ window.LIBROS = [
  {
   "titulo": "La semana de colores",
   "autor": "Elena Garro",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -705,7 +705,7 @@ window.LIBROS = [
  {
   "titulo": "Testimonios sobre Mariana",
   "autor": "Elena Garro",
-  "genero": "Psicológico / experimental",
+  "genero": "Psicológico / Experimental",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -714,7 +714,7 @@ window.LIBROS = [
  {
   "titulo": "Consecuencias naturales",
   "autor": "Elia Barceló",
-  "genero": "Ciencia ficción / feminismo",
+  "genero": "Ciencia ficción / Feminismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -723,7 +723,7 @@ window.LIBROS = [
  {
   "titulo": "Boy Parts",
   "autor": "Eliza Clark",
-  "genero": "Literatura contemporánea",
+  "genero": "Psicológico / Humor y sátira",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -732,7 +732,7 @@ window.LIBROS = [
  {
   "titulo": "Del inconveniente de haber nacido",
   "autor": "Emil Cioran",
-  "genero": "Filosofía / aforismos",
+  "genero": "Filosófico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -741,7 +741,7 @@ window.LIBROS = [
  {
   "titulo": "Cumbres borrascosas",
   "autor": "Emily Brontë",
-  "genero": "Gótico / romance",
+  "genero": "Gótico / Romance",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -750,7 +750,7 @@ window.LIBROS = [
  {
   "titulo": "El viejo y el mar",
   "autor": "Ernest Hemingway",
-  "genero": "Realismo / novela corta",
+  "genero": "Realismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -759,7 +759,7 @@ window.LIBROS = [
  {
   "titulo": "El túnel",
   "autor": "Ernesto Sabato",
-  "genero": "Psicológico / existencialismo",
+  "genero": "Psicológico / Existencialismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -786,7 +786,7 @@ window.LIBROS = [
  {
   "titulo": "Permagel",
   "autor": "Eva Baltasar",
-  "genero": "Literatura contemporánea",
+  "genero": "Psicológico / Feminismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -795,7 +795,7 @@ window.LIBROS = [
  {
   "titulo": "Mamut",
   "autor": "Eva Baltasar",
-  "genero": "Literatura contemporánea",
+  "genero": "Psicológico / Feminismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -804,7 +804,7 @@ window.LIBROS = [
  {
   "titulo": "Boulder",
   "autor": "Eva Baltasar",
-  "genero": "Literatura contemporánea",
+  "genero": "Psicológico / Feminismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -813,7 +813,7 @@ window.LIBROS = [
  {
   "titulo": "Brideshead revisited",
   "autor": "Evelyn Waugh",
-  "genero": "Novela",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -822,7 +822,7 @@ window.LIBROS = [
  {
   "titulo": "Paradais",
   "autor": "Fernanda Melchor",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo / Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -831,7 +831,7 @@ window.LIBROS = [
  {
   "titulo": "Temporada de huracanes",
   "autor": "Fernanda Melchor",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo / Psicológico",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": true,
@@ -840,7 +840,7 @@ window.LIBROS = [
  {
   "titulo": "Mugre rosa",
   "autor": "Fernanda Trías",
-  "genero": "Distopía / ficción especulativa",
+  "genero": "Distopía / Ciencia ficción",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -849,7 +849,7 @@ window.LIBROS = [
  {
   "titulo": "Libro del desasosiego",
   "autor": "Fernando Pessoa",
-  "genero": "Filosófico / fragmentario",
+  "genero": "Filosófico",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -858,7 +858,7 @@ window.LIBROS = [
  {
   "titulo": "Noches blancas",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Romanticismo / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -867,7 +867,7 @@ window.LIBROS = [
  {
   "titulo": "El doble",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Psicológico / fantástico",
+  "genero": "Psicológico / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -885,7 +885,7 @@ window.LIBROS = [
  {
   "titulo": "Humillados y ofendidos",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Drama / psicológico",
+  "genero": "Drama / Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -894,7 +894,7 @@ window.LIBROS = [
  {
   "titulo": "Memorias del subsuelo",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Filosófico / existencialismo",
+  "genero": "Filosófico / Existencialismo",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": true,
@@ -903,7 +903,7 @@ window.LIBROS = [
  {
   "titulo": "Crimen y castigo",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Psicológico / filosófico",
+  "genero": "Psicológico / Filosófico",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -912,7 +912,7 @@ window.LIBROS = [
  {
   "titulo": "El idiota",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Psicológico / social",
+  "genero": "Psicológico",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": true,
@@ -921,7 +921,7 @@ window.LIBROS = [
  {
   "titulo": "Los hermanos Karamazov",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Filosófico / psicológico",
+  "genero": "Filosófico / Psicológico",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": true,
@@ -930,7 +930,7 @@ window.LIBROS = [
  {
   "titulo": "Los demonios",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Filosófico / político",
+  "genero": "Filosófico",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -939,7 +939,7 @@ window.LIBROS = [
  {
   "titulo": "Pobre gente",
   "autor": "Fiódor Dostoyevski",
-  "genero": "Romance epistolar",
+  "genero": "Realismo / Romance",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -948,7 +948,7 @@ window.LIBROS = [
  {
   "titulo": "Dune",
   "autor": "Frank Herbert",
-  "genero": "Ciencia ficción / política",
+  "genero": "Ciencia ficción",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": true,
@@ -957,7 +957,7 @@ window.LIBROS = [
  {
   "titulo": "La metamorfosis",
   "autor": "Franz Kafka",
-  "genero": "Fantástico / existencialismo",
+  "genero": "Fantástico / Existencialismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -966,7 +966,7 @@ window.LIBROS = [
  {
   "titulo": "La condena",
   "autor": "Franz Kafka",
-  "genero": "Fantástico / psicológico",
+  "genero": "Fantástico / Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -975,7 +975,7 @@ window.LIBROS = [
  {
   "titulo": "Un artista del hambre",
   "autor": "Franz Kafka",
-  "genero": "Existencialismo / relato",
+  "genero": "Existencialismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -984,7 +984,7 @@ window.LIBROS = [
  {
   "titulo": "Carta al padre",
   "autor": "Franz Kafka",
-  "genero": "Autobiografía / ensayo",
+  "genero": "No ficción",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -993,7 +993,7 @@ window.LIBROS = [
  {
   "titulo": "En la colonia penitenciaria",
   "autor": "Franz Kafka",
-  "genero": "Fantástico / filosófico",
+  "genero": "Fantástico / Filosófico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1002,7 +1002,7 @@ window.LIBROS = [
  {
   "titulo": "El proceso",
   "autor": "Franz Kafka",
-  "genero": "Existencialismo / absurdo",
+  "genero": "Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -1011,7 +1011,7 @@ window.LIBROS = [
  {
   "titulo": "América",
   "autor": "Franz Kafka",
-  "genero": "Sátira / novela",
+  "genero": "Humor y sátira",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1020,7 +1020,7 @@ window.LIBROS = [
  {
   "titulo": "El castillo",
   "autor": "Franz Kafka",
-  "genero": "Absurdo / existencialismo",
+  "genero": "Existencialismo",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -1029,7 +1029,7 @@ window.LIBROS = [
  {
   "titulo": "Cartas a Milena",
   "autor": "Franz Kafka",
-  "genero": "Epistolar",
+  "genero": "No ficción",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1038,8 +1038,8 @@ window.LIBROS = [
  {
   "titulo": "La asistenta",
   "autor": "Freida McFadden",
-  "genero": "Thriller psicológico",
-  "dificultad": 2,
+  "genero": "Thriller / Psicológico",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Millie, una mujer con un pasado oculto, consigue un trabajo como asistenta interna en casa de los Winchester, una familia adinerada con comportamientos extraños que empiezan a inquietarla."
@@ -1056,7 +1056,7 @@ window.LIBROS = [
  {
   "titulo": "Crónica de una muerte anunciada",
   "autor": "Gabriel García Márquez",
-  "genero": "Realismo / novela corta",
+  "genero": "Realismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -1065,7 +1065,7 @@ window.LIBROS = [
  {
   "titulo": "El amor en los tiempos del cólera",
   "autor": "Gabriel García Márquez",
-  "genero": "Romance / realismo mágico",
+  "genero": "Romance / Realismo mágico",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -1083,7 +1083,7 @@ window.LIBROS = [
  {
   "titulo": "Una noche con Claire",
   "autor": "Gaito Gazdánov",
-  "genero": "Romance / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -1092,7 +1092,7 @@ window.LIBROS = [
  {
   "titulo": "El espectro de Aleksandr Wolf",
   "autor": "Gaito Gazdánov",
-  "genero": "Psicológico / existencialismo",
+  "genero": "Psicológico / Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1101,7 +1101,7 @@ window.LIBROS = [
  {
   "titulo": "Caminos nocturnos",
   "autor": "Gaito Gazdánov",
-  "genero": "Existencialismo / novela",
+  "genero": "Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1110,7 +1110,7 @@ window.LIBROS = [
  {
   "titulo": "El retorno de Buda",
   "autor": "Gaito Gazdánov",
-  "genero": "Misterio / filosófico",
+  "genero": "Misterio / Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1119,8 +1119,8 @@ window.LIBROS = [
  {
   "titulo": "Si los gatos desaparecieran del mundo",
   "autor": "Genki Kawamura",
-  "genero": "Literatura japonesa",
-  "dificultad": 2,
+  "genero": "Fantástico / Drama",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Un cartero con un tumor cerebral recibe la visita de un diablo que le ofrece un trato: cada objeto que acepte que desaparezca del mundo le dará un día más de vida."
@@ -1128,7 +1128,7 @@ window.LIBROS = [
  {
   "titulo": "Rebelión en la granja",
   "autor": "George Orwell",
-  "genero": "Sátira política / fábula",
+  "genero": "Humor y sátira / Fábula",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -1137,7 +1137,7 @@ window.LIBROS = [
  {
   "titulo": "1984",
   "autor": "George Orwell",
-  "genero": "Distopía / política",
+  "genero": "Distopía",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1146,7 +1146,7 @@ window.LIBROS = [
  {
   "titulo": "Homenaje a Cataluña",
   "autor": "George Orwell",
-  "genero": "Memorias / histórico",
+  "genero": "Histórico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1164,7 +1164,7 @@ window.LIBROS = [
  {
   "titulo": "Física de la tristeza",
   "autor": "Gueorgui Gospodínov",
-  "genero": "Literatura contemporánea",
+  "genero": "Experimental",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": false,
@@ -1191,7 +1191,7 @@ window.LIBROS = [
  {
   "titulo": "Rimas y leyendas",
   "autor": "Gustavo Adolfo Bécquer",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -1200,7 +1200,7 @@ window.LIBROS = [
  {
   "titulo": "La llamada de Cthulhu",
   "autor": "H. P. Lovecraft",
-  "genero": "Terror cósmico",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -1209,7 +1209,7 @@ window.LIBROS = [
  {
   "titulo": "El color que cayó del cielo",
   "autor": "H. P. Lovecraft",
-  "genero": "Terror cósmico",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -1218,7 +1218,7 @@ window.LIBROS = [
  {
   "titulo": "El que susurra en la oscuridad",
   "autor": "H. P. Lovecraft",
-  "genero": "Terror cósmico",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -1227,7 +1227,7 @@ window.LIBROS = [
  {
   "titulo": "En las montañas de la locura",
   "autor": "H. P. Lovecraft",
-  "genero": "Terror cósmico",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1236,7 +1236,7 @@ window.LIBROS = [
  {
   "titulo": "El caso de Charles Dexter Ward",
   "autor": "H. P. Lovecraft",
-  "genero": "Terror / ocultismo",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -1245,7 +1245,7 @@ window.LIBROS = [
  {
   "titulo": "La vegetariana",
   "autor": "Han Kang",
-  "genero": "Psicológico / surrealismo",
+  "genero": "Psicológico / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -1254,7 +1254,7 @@ window.LIBROS = [
  {
   "titulo": "Actos humanos",
   "autor": "Han Kang",
-  "genero": "Histórico / drama",
+  "genero": "Histórico / Drama",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1263,7 +1263,7 @@ window.LIBROS = [
  {
   "titulo": "Tan poca vida",
   "autor": "Hanya Yanagihara",
-  "genero": "Drama / psicológico",
+  "genero": "Drama / Psicológico",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": true,
@@ -1281,7 +1281,7 @@ window.LIBROS = [
  {
   "titulo": "Los años de peregrinación del chico sin color",
   "autor": "Haruki Murakami",
-  "genero": "Psicológico / contemporáneo",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1290,7 +1290,7 @@ window.LIBROS = [
  {
   "titulo": "Tokio blues",
   "autor": "Haruki Murakami",
-  "genero": "Romance / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1299,7 +1299,7 @@ window.LIBROS = [
  {
   "titulo": "Al sur de la frontera, al oeste del sol",
   "autor": "Haruki Murakami",
-  "genero": "Romance / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1308,7 +1308,7 @@ window.LIBROS = [
  {
   "titulo": "Walden",
   "autor": "Henry David Thoreau",
-  "genero": "Ensayo / filosofía",
+  "genero": "Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1317,7 +1317,7 @@ window.LIBROS = [
  {
   "titulo": "Daisy Miller",
   "autor": "Henry James",
-  "genero": "Realismo / novela corta",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1326,7 +1326,7 @@ window.LIBROS = [
  {
   "titulo": "Bartleby, el escribiente",
   "autor": "Herman Melville",
-  "genero": "Literatura / absurdo",
+  "genero": "Existencialismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1335,7 +1335,7 @@ window.LIBROS = [
  {
   "titulo": "Siddhartha",
   "autor": "Hermann Hesse",
-  "genero": "Filosófico / espiritual",
+  "genero": "Filosófico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1344,7 +1344,7 @@ window.LIBROS = [
  {
   "titulo": "El lobo estepario",
   "autor": "Hermann Hesse",
-  "genero": "Existencialismo / psicológico",
+  "genero": "Existencialismo / Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -1353,7 +1353,7 @@ window.LIBROS = [
  {
   "titulo": "Demian",
   "autor": "Hermann Hesse",
-  "genero": "Filosófico / coming-of-age",
+  "genero": "Filosófico / Coming-of-age",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1362,7 +1362,7 @@ window.LIBROS = [
  {
   "titulo": "El tercer amor",
   "autor": "Hiromi Kawakami",
-  "genero": "Romance / contemporáneo",
+  "genero": "Romance",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1371,7 +1371,7 @@ window.LIBROS = [
  {
   "titulo": "El cielo es azul, la tierra blanca",
   "autor": "Hiromi Kawakami",
-  "genero": "Romance / japonés",
+  "genero": "Romance",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1380,8 +1380,8 @@ window.LIBROS = [
  {
   "titulo": "Los misterios de la taberna Kamogawa",
   "autor": "Hisashi Kashiwai",
-  "genero": "Contemporáneo / japonés",
-  "dificultad": 2,
+  "genero": "Realismo",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Un padre y su hija ayudan a clientes a reconstruir recuerdos mediante platos de comida."
@@ -1389,7 +1389,7 @@ window.LIBROS = [
  {
   "titulo": "La Ilíada",
   "autor": "Homero",
-  "genero": "Épica / tragedia",
+  "genero": "Épica / Drama",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": false,
@@ -1398,7 +1398,7 @@ window.LIBROS = [
  {
   "titulo": "La Odisea",
   "autor": "Homero",
-  "genero": "Épica / aventura",
+  "genero": "Épica / Aventura",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1407,7 +1407,7 @@ window.LIBROS = [
  {
   "titulo": "Los amantes de la noche",
   "autor": "Ian McEwan",
-  "genero": "Romance / drama",
+  "genero": "Romance / Drama",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1416,7 +1416,7 @@ window.LIBROS = [
  {
   "titulo": "Marcados al nacer",
   "autor": "Ibram X. Kendi",
-  "genero": "Historia / ensayo",
+  "genero": "Histórico",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": false,
@@ -1425,7 +1425,7 @@ window.LIBROS = [
  {
   "titulo": "Poesía completa",
   "autor": "Idea Vilariño",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1434,7 +1434,7 @@ window.LIBROS = [
  {
   "titulo": "Crítica de la razón pura",
   "autor": "Immanuel Kant",
-  "genero": "Filosofía",
+  "genero": "Filosófico",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -1443,7 +1443,7 @@ window.LIBROS = [
  {
   "titulo": "El baile",
   "autor": "Irène Némirovsky",
-  "genero": "Drama / psicológico",
+  "genero": "Drama / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -1452,7 +1452,7 @@ window.LIBROS = [
  {
   "titulo": "Te di ojos y miraste las tinieblas",
   "autor": "Irene Solà",
-  "genero": "Literatura contemporánea",
+  "genero": "Fantástico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1461,7 +1461,7 @@ window.LIBROS = [
  {
   "titulo": "Fundación",
   "autor": "Isaac Asimov",
-  "genero": "Ciencia ficción / política",
+  "genero": "Ciencia ficción",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1470,7 +1470,7 @@ window.LIBROS = [
  {
   "titulo": "Fundación e Imperio",
   "autor": "Isaac Asimov",
-  "genero": "Ciencia ficción / política",
+  "genero": "Ciencia ficción",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1479,7 +1479,7 @@ window.LIBROS = [
  {
   "titulo": "Segunda Fundación",
   "autor": "Isaac Asimov",
-  "genero": "Ciencia ficción / misterio",
+  "genero": "Ciencia ficción / Misterio",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -1488,7 +1488,7 @@ window.LIBROS = [
  {
   "titulo": "Mujeres del alma mía",
   "autor": "Isabel Allende",
-  "genero": "Ensayo / feminismo",
+  "genero": "Feminismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -1515,7 +1515,7 @@ window.LIBROS = [
  {
   "titulo": "Paula",
   "autor": "Isabel Allende",
-  "genero": "Memorias",
+  "genero": "No ficción",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1533,7 +1533,7 @@ window.LIBROS = [
  {
   "titulo": "El viento conoce mi nombre",
   "autor": "Isabel Allende",
-  "genero": "Drama / histórico",
+  "genero": "Drama / Histórico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1542,7 +1542,7 @@ window.LIBROS = [
  {
   "titulo": "El amante japonés",
   "autor": "Isabel Allende",
-  "genero": "Romance / histórico",
+  "genero": "Romance / Histórico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1560,7 +1560,7 @@ window.LIBROS = [
  {
   "titulo": "La conciencia de Zeno",
   "autor": "Italo Svevo",
-  "genero": "Psicológico / humor",
+  "genero": "Psicológico / Humor y sátira",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -1587,7 +1587,7 @@ window.LIBROS = [
  {
   "titulo": "El Hobbit",
   "autor": "J. R. R. Tolkien",
-  "genero": "Fantasía épica",
+  "genero": "Fantasía",
   "dificultad": 2,
   "largo": "Medio",
   "tengo": false,
@@ -1596,7 +1596,7 @@ window.LIBROS = [
  {
   "titulo": "El señor de los anillos",
   "autor": "J. R. R. Tolkien",
-  "genero": "Fantasía épica",
+  "genero": "Fantasía",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": false,
@@ -1605,7 +1605,7 @@ window.LIBROS = [
  {
   "titulo": "Yo que nunca supe de los hombres",
   "autor": "Jacqueline Harpman",
-  "genero": "Literatura contemporánea",
+  "genero": "Distopía / Feminismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1614,7 +1614,7 @@ window.LIBROS = [
  {
   "titulo": "Ulises",
   "autor": "James Joyce",
-  "genero": "Modernismo / experimental",
+  "genero": "Experimental",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -1623,7 +1623,7 @@ window.LIBROS = [
  {
   "titulo": "Ya nadie escribe cartas",
   "autor": "Jang Eun-jin",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -1632,7 +1632,7 @@ window.LIBROS = [
  {
   "titulo": "Ancho mar de los Sargazos",
   "autor": "Jean Rhys",
-  "genero": "Poscolonial / feminismo",
+  "genero": "Poscolonial / Feminismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1650,7 +1650,7 @@ window.LIBROS = [
  {
   "titulo": "Picnic en Hanging Rock",
   "autor": "Joan Lindsay",
-  "genero": "Misterio / fantástico",
+  "genero": "Misterio / Fantástico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1668,7 +1668,7 @@ window.LIBROS = [
  {
   "titulo": "Las penas del joven Werther",
   "autor": "Johann Wolfgang von Goethe",
-  "genero": "Romanticismo",
+  "genero": "Romance",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1677,7 +1677,7 @@ window.LIBROS = [
  {
   "titulo": "La conjura de los necios",
   "autor": "John Kennedy Toole",
-  "genero": "Sátira / comedia",
+  "genero": "Humor y sátira",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1686,7 +1686,7 @@ window.LIBROS = [
  {
   "titulo": "Al este del Edén",
   "autor": "John Steinbeck",
-  "genero": "Drama / saga familiar",
+  "genero": "Drama",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": false,
@@ -1705,7 +1705,7 @@ window.LIBROS = [
   "titulo": "La perla",
   "autor": "John Steinbeck",
   "genero": "Fábula",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Kino, un buzo de perlas pobre, encuentra una perla enorme tras la picadura de un escorpión a su hijo. El hallazgo despierta la codicia de la comunidad y arrastra a su familia a la violencia."
@@ -1722,7 +1722,7 @@ window.LIBROS = [
  {
   "titulo": "Stoner",
   "autor": "John Williams",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1740,7 +1740,7 @@ window.LIBROS = [
  {
   "titulo": "Ficciones",
   "autor": "Jorge Luis Borges",
-  "genero": "Fantástico / filosófico",
+  "genero": "Fantástico / Filosófico",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": true,
@@ -1749,7 +1749,7 @@ window.LIBROS = [
  {
   "titulo": "El Aleph",
   "autor": "Jorge Luis Borges",
-  "genero": "Fantástico / filosófico",
+  "genero": "Fantástico / Filosófico",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": true,
@@ -1758,7 +1758,7 @@ window.LIBROS = [
  {
   "titulo": "Las batallas en el desierto",
   "autor": "José Emilio Pacheco",
-  "genero": "Coming-of-age / novela corta",
+  "genero": "Coming-of-age",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -1767,7 +1767,7 @@ window.LIBROS = [
  {
   "titulo": "El principio del placer",
   "autor": "José Emilio Pacheco",
-  "genero": "Novela corta",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1776,7 +1776,7 @@ window.LIBROS = [
  {
   "titulo": "Caín",
   "autor": "José Saramago",
-  "genero": "Filosófico / sátira bíblica",
+  "genero": "Filosófico / Humor y sátira",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -1785,7 +1785,7 @@ window.LIBROS = [
  {
   "titulo": "Ensayo sobre la ceguera",
   "autor": "José Saramago",
-  "genero": "Distopía / filosófico",
+  "genero": "Distopía / Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -1812,7 +1812,7 @@ window.LIBROS = [
  {
   "titulo": "El corazón de las tinieblas",
   "autor": "Joseph Conrad",
-  "genero": "Filosófico / colonialismo",
+  "genero": "Filosófico / Poscolonial",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1822,7 +1822,7 @@ window.LIBROS = [
   "titulo": "Huye, Jane, huye",
   "autor": "Joy Fielding",
   "genero": "Thriller",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Jane sufre amnesia tras una experiencia traumática y no sabe quién es ni en quién confiar. Debe descubrir por sí misma qué le ocurrió."
@@ -1830,7 +1830,7 @@ window.LIBROS = [
  {
   "titulo": "El astillero",
   "autor": "Juan Carlos Onetti",
-  "genero": "Existencialismo / realismo",
+  "genero": "Existencialismo / Realismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1848,7 +1848,7 @@ window.LIBROS = [
  {
   "titulo": "Pedro Páramo",
   "autor": "Juan Rulfo",
-  "genero": "Realismo mágico / fantástico",
+  "genero": "Realismo mágico / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1857,7 +1857,7 @@ window.LIBROS = [
  {
   "titulo": "Historias de cronopios y de famas",
   "autor": "Julio Cortázar",
-  "genero": "Fantástico / humor",
+  "genero": "Fantástico / Humor y sátira",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1866,7 +1866,7 @@ window.LIBROS = [
  {
   "titulo": "Bestiario",
   "autor": "Julio Cortázar",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -1875,7 +1875,7 @@ window.LIBROS = [
  {
   "titulo": "Final del juego",
   "autor": "Julio Cortázar",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1884,7 +1884,7 @@ window.LIBROS = [
  {
   "titulo": "Rayuela",
   "autor": "Julio Cortázar",
-  "genero": "Experimental / existencialismo",
+  "genero": "Experimental / Existencialismo",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": true,
@@ -1893,7 +1893,7 @@ window.LIBROS = [
  {
   "titulo": "El despertar",
   "autor": "Kate Chopin",
-  "genero": "Realismo / feminismo",
+  "genero": "Realismo / Feminismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1902,7 +1902,7 @@ window.LIBROS = [
  {
   "titulo": "Nunca me abandones",
   "autor": "Kazuo Ishiguro",
-  "genero": "Distopía / psicológico",
+  "genero": "Distopía / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1911,7 +1911,7 @@ window.LIBROS = [
  {
   "titulo": "Los restos del día",
   "autor": "Kazuo Ishiguro",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -1920,7 +1920,7 @@ window.LIBROS = [
  {
   "titulo": "La presa",
   "autor": "Kenzaburō Ōe",
-  "genero": "Drama / guerra",
+  "genero": "Drama",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -1929,7 +1929,7 @@ window.LIBROS = [
  {
   "titulo": "La cuestión personal",
   "autor": "Kenzaburō Ōe",
-  "genero": "Existencialismo / psicológico",
+  "genero": "Existencialismo / Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1938,7 +1938,7 @@ window.LIBROS = [
  {
   "titulo": "Arrancad las semillas, fusilad a los niños",
   "autor": "Kenzaburō Ōe",
-  "genero": "Drama / guerra",
+  "genero": "Drama",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1965,7 +1965,7 @@ window.LIBROS = [
  {
   "titulo": "La mujer de la arena",
   "autor": "Kōbō Abe",
-  "genero": "Existencialismo / surrealismo",
+  "genero": "Existencialismo / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1974,7 +1974,7 @@ window.LIBROS = [
  {
   "titulo": "Los cuentos siniestros",
   "autor": "Kōbō Abe",
-  "genero": "Fantástico / psicológico",
+  "genero": "Fantástico / Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -1983,7 +1983,7 @@ window.LIBROS = [
  {
   "titulo": "El mapa calcinado",
   "autor": "Kōbō Abe",
-  "genero": "Misterio / existencialismo",
+  "genero": "Misterio / Existencialismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -1992,7 +1992,7 @@ window.LIBROS = [
  {
   "titulo": "El hombre caja",
   "autor": "Kōbō Abe",
-  "genero": "Experimental / existencialismo",
+  "genero": "Experimental / Existencialismo",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": false,
@@ -2010,7 +2010,7 @@ window.LIBROS = [
  {
   "titulo": "Relojes de sangre",
   "autor": "Leni Zumas",
-  "genero": "Distopía / ciencia ficción",
+  "genero": "Distopía / Ciencia ficción",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -2019,7 +2019,7 @@ window.LIBROS = [
  {
   "titulo": "La muerte de Iván Ilich",
   "autor": "León Tolstói",
-  "genero": "Existencialismo / realismo",
+  "genero": "Existencialismo / Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -2028,7 +2028,7 @@ window.LIBROS = [
  {
   "titulo": "Guerra y paz",
   "autor": "León Tolstói",
-  "genero": "Histórico / realismo",
+  "genero": "Histórico / Realismo",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": true,
@@ -2037,7 +2037,7 @@ window.LIBROS = [
  {
   "titulo": "Anna Karenina",
   "autor": "León Tolstói",
-  "genero": "Realismo / drama",
+  "genero": "Realismo / Drama",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": true,
@@ -2046,7 +2046,7 @@ window.LIBROS = [
  {
   "titulo": "De lo que vive el hombre",
   "autor": "León Tolstói",
-  "genero": "Cuentos",
+  "genero": "Filosófico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -2055,7 +2055,7 @@ window.LIBROS = [
  {
   "titulo": "La sonata a Kreutzer",
   "autor": "León Tolstói",
-  "genero": "Novela corta",
+  "genero": "Realismo / Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2064,7 +2064,7 @@ window.LIBROS = [
  {
   "titulo": "Pandora",
   "autor": "Liliana Blum",
-  "genero": "Terror / fantástico",
+  "genero": "Terror / Fantástico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2074,7 +2074,7 @@ window.LIBROS = [
   "titulo": "Sin una palabra",
   "autor": "Linwood Barclay",
   "genero": "Thriller",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Cynthia Archer despierta a los quince años y descubre que sus padres y su hermano han desaparecido. Veinticinco años después, una carta la obliga a remover el pasado."
@@ -2082,7 +2082,7 @@ window.LIBROS = [
  {
   "titulo": "Esta herida llena de peces",
   "autor": "Lorena Salazar Massó",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2091,7 +2091,7 @@ window.LIBROS = [
  {
   "titulo": "Eternamente tuya",
   "autor": "Louise Erdrich",
-  "genero": "Contemporáneo / psicológico",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2100,7 +2100,7 @@ window.LIBROS = [
  {
   "titulo": "El cuento de la criada",
   "autor": "Margaret Atwood",
-  "genero": "Distopía / feminismo",
+  "genero": "Distopía / Feminismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -2118,7 +2118,7 @@ window.LIBROS = [
  {
   "titulo": "El amante",
   "autor": "Marguerite Duras",
-  "genero": "Autobiografía / romance",
+  "genero": "Romance",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2127,7 +2127,7 @@ window.LIBROS = [
  {
   "titulo": "Memorias de Adriano",
   "autor": "Marguerite Yourcenar",
-  "genero": "Histórico / filosófico",
+  "genero": "Histórico / Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2136,7 +2136,7 @@ window.LIBROS = [
  {
   "titulo": "Pelea de gallos",
   "autor": "María Fernanda Ampuero",
-  "genero": "Thriller / social",
+  "genero": "Thriller",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2145,7 +2145,7 @@ window.LIBROS = [
  {
   "titulo": "Los peligros de fumar en la cama",
   "autor": "Mariana Enríquez",
-  "genero": "Terror / cuentos",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2154,7 +2154,7 @@ window.LIBROS = [
  {
   "titulo": "Las cosas que perdimos en el fuego",
   "autor": "Mariana Enríquez",
-  "genero": "Terror / cuentos",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2163,7 +2163,7 @@ window.LIBROS = [
  {
   "titulo": "Un lugar soleado para gente sombría",
   "autor": "Mariana Enríquez",
-  "genero": "Terror / cuentos",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2172,7 +2172,7 @@ window.LIBROS = [
  {
   "titulo": "El otro lado",
   "autor": "Mariana Enríquez",
-  "genero": "Crónica / ensayo / autobiografía",
+  "genero": "No ficción",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": false,
@@ -2181,7 +2181,7 @@ window.LIBROS = [
  {
   "titulo": "Nuestra parte de noche",
   "autor": "Mariana Enríquez",
-  "genero": "Terror / fantástico",
+  "genero": "Terror / Fantástico",
   "dificultad": 5,
   "largo": "Largo",
   "tengo": false,
@@ -2190,7 +2190,7 @@ window.LIBROS = [
  {
   "titulo": "La sed",
   "autor": "Marina Yuszczuk",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2199,7 +2199,7 @@ window.LIBROS = [
  {
   "titulo": "La tregua",
   "autor": "Mario Benedetti",
-  "genero": "Romance / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -2208,7 +2208,7 @@ window.LIBROS = [
  {
   "titulo": "La ciudad y los perros",
   "autor": "Mario Vargas Llosa",
-  "genero": "Realismo / social",
+  "genero": "Realismo",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2217,7 +2217,7 @@ window.LIBROS = [
  {
   "titulo": "Travesuras de la niña mala",
   "autor": "Mario Vargas Llosa",
-  "genero": "Romance / realismo",
+  "genero": "Romance / Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2226,7 +2226,7 @@ window.LIBROS = [
  {
   "titulo": "Persépolis",
   "autor": "Marjane Satrapi",
-  "genero": "Novela gráfica / autobiografía",
+  "genero": "Histórico / Drama",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2235,7 +2235,7 @@ window.LIBROS = [
  {
   "titulo": "La casa de hojas",
   "autor": "Mark Z. Danielewski",
-  "genero": "Terror / experimental",
+  "genero": "Terror / Experimental",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -2244,7 +2244,7 @@ window.LIBROS = [
  {
   "titulo": "La pared",
   "autor": "Marlen Haushofer",
-  "genero": "Distopía / existencialismo",
+  "genero": "Distopía / Existencialismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2253,7 +2253,7 @@ window.LIBROS = [
  {
   "titulo": "Frankenstein",
   "autor": "Mary Shelley",
-  "genero": "Gótico / ciencia ficción",
+  "genero": "Gótico / Ciencia ficción",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2262,7 +2262,7 @@ window.LIBROS = [
  {
   "titulo": "El último hombre",
   "autor": "Mary Shelley",
-  "genero": "Ciencia ficción / apocalíptico",
+  "genero": "Ciencia ficción / Distopía",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": true,
@@ -2271,7 +2271,7 @@ window.LIBROS = [
  {
   "titulo": "Mathilda",
   "autor": "Mary Shelley",
-  "genero": "Gótico / romance",
+  "genero": "Gótico / Romance",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2289,7 +2289,7 @@ window.LIBROS = [
  {
   "titulo": "Niebla",
   "autor": "Miguel de Unamuno",
-  "genero": "Filosófico / existencialismo",
+  "genero": "Filosófico / Existencialismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2298,7 +2298,7 @@ window.LIBROS = [
  {
   "titulo": "La sombra del ciprés es alargada",
   "autor": "Miguel Delibes",
-  "genero": "Realismo / psicológico",
+  "genero": "Realismo / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2307,7 +2307,7 @@ window.LIBROS = [
  {
   "titulo": "El maestro y Margarita",
   "autor": "Mijaíl Bulgákov",
-  "genero": "Fantástico / sátira",
+  "genero": "Fantástico / Humor y sátira",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2316,7 +2316,7 @@ window.LIBROS = [
  {
   "titulo": "La insoportable levedad del ser",
   "autor": "Milan Kundera",
-  "genero": "Filosófico / romance",
+  "genero": "Filosófico / Romance",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2325,7 +2325,7 @@ window.LIBROS = [
  {
   "titulo": "Bunny",
   "autor": "Mona Awad",
-  "genero": "Terror / sátira",
+  "genero": "Terror / Humor y sátira",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2334,7 +2334,7 @@ window.LIBROS = [
  {
   "titulo": "Nefando",
   "autor": "Mónica Ojeda",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2343,7 +2343,7 @@ window.LIBROS = [
  {
   "titulo": "Mandíbula",
   "autor": "Mónica Ojeda",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2352,7 +2352,7 @@ window.LIBROS = [
  {
   "titulo": "Chamanes eléctricos en la fiesta del sol",
   "autor": "Mónica Ojeda",
-  "genero": "Cuentos",
+  "genero": "Fantástico / Experimental",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2361,7 +2361,7 @@ window.LIBROS = [
  {
   "titulo": "Los ojos son la mejor parte",
   "autor": "Monika Kim",
-  "genero": "Literatura contemporánea",
+  "genero": "Terror / Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2370,7 +2370,7 @@ window.LIBROS = [
  {
   "titulo": "El poder",
   "autor": "Naomi Alderman",
-  "genero": "Ciencia ficción / distopía",
+  "genero": "Ciencia ficción / Distopía",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -2379,7 +2379,7 @@ window.LIBROS = [
  {
   "titulo": "Las pequeñas virtudes",
   "autor": "Natalia Ginzburg",
-  "genero": "Ensayo / autobiografía",
+  "genero": "No ficción",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2388,7 +2388,7 @@ window.LIBROS = [
  {
   "titulo": "Kokoro",
   "autor": "Natsume Sōseki",
-  "genero": "Psicológico / clásico japonés",
+  "genero": "Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2397,8 +2397,8 @@ window.LIBROS = [
  {
   "titulo": "Coraline",
   "autor": "Neil Gaiman",
-  "genero": "Fantasía oscura",
-  "dificultad": 2,
+  "genero": "Fantasía",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Una niña descubre una versión aparentemente perfecta de su hogar que esconde algo siniestro."
@@ -2406,7 +2406,7 @@ window.LIBROS = [
  {
   "titulo": "El océano al final del camino",
   "autor": "Neil Gaiman",
-  "genero": "Fantasía oscura",
+  "genero": "Fantasía",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -2415,7 +2415,7 @@ window.LIBROS = [
  {
   "titulo": "Anatomía de un engaño",
   "autor": "Noelia Serrano",
-  "genero": "Thriller psicológico",
+  "genero": "Thriller / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -2424,7 +2424,7 @@ window.LIBROS = [
  {
   "titulo": "Sobre los huesos de los muertos",
   "autor": "Olga Tokarczuk",
-  "genero": "Misterio / filosófico",
+  "genero": "Misterio / Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2433,7 +2433,7 @@ window.LIBROS = [
  {
   "titulo": "Indigno de ser humano",
   "autor": "Osamu Dazai",
-  "genero": "Psicológico / existencialismo",
+  "genero": "Psicológico / Existencialismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": true,
@@ -2442,7 +2442,7 @@ window.LIBROS = [
  {
   "titulo": "Flores de la bufonería",
   "autor": "Osamu Dazai",
-  "genero": "Cuentos",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2460,8 +2460,8 @@ window.LIBROS = [
  {
   "titulo": "El fantasma de Canterville",
   "autor": "Oscar Wilde",
-  "genero": "Fantasía / humor",
-  "dificultad": 2,
+  "genero": "Fantasía / Humor y sátira",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": true,
   "trata": "Un fantasma intenta asustar a una familia que no se toma en serio sus apariciones."
@@ -2469,7 +2469,7 @@ window.LIBROS = [
  {
   "titulo": "El retrato de Dorian Gray",
   "autor": "Oscar Wilde",
-  "genero": "Gótico / filosófico",
+  "genero": "Gótico / Filosófico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -2487,7 +2487,7 @@ window.LIBROS = [
  {
   "titulo": "La cría",
   "autor": "Pablo Rivero",
-  "genero": "Terror / contemporáneo",
+  "genero": "Terror",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2496,7 +2496,7 @@ window.LIBROS = [
  {
   "titulo": "La soledad de los números primos",
   "autor": "Paolo Giordano",
-  "genero": "Romance / psicológico",
+  "genero": "Romance / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2505,7 +2505,7 @@ window.LIBROS = [
  {
   "titulo": "Calle de las tiendas oscuras",
   "autor": "Patrick Modiano",
-  "genero": "Misterio / memoria",
+  "genero": "Misterio",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2514,7 +2514,7 @@ window.LIBROS = [
  {
   "titulo": "En el café de la juventud perdida",
   "autor": "Patrick Modiano",
-  "genero": "Contemporáneo / memoria",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2523,7 +2523,7 @@ window.LIBROS = [
  {
   "titulo": "Para que no te pierdas en el barrio",
   "autor": "Patrick Modiano",
-  "genero": "Misterio / memoria",
+  "genero": "Misterio",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2532,7 +2532,7 @@ window.LIBROS = [
  {
   "titulo": "La bailarina",
   "autor": "Patrick Modiano",
-  "genero": "Contemporáneo / memoria",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2541,7 +2541,7 @@ window.LIBROS = [
  {
   "titulo": "El nombre del viento",
   "autor": "Patrick Rothfuss",
-  "genero": "Fantasía épica",
+  "genero": "Fantasía",
   "dificultad": 3,
   "largo": "Largo",
   "tengo": false,
@@ -2550,7 +2550,7 @@ window.LIBROS = [
  {
   "titulo": "El perfume",
   "autor": "Patrick Süskind",
-  "genero": "Histórico / psicológico",
+  "genero": "Histórico / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2568,7 +2568,7 @@ window.LIBROS = [
  {
   "titulo": "Lo que no tiene nombre",
   "autor": "Piedad Bonnett",
-  "genero": "Memorias / duelo",
+  "genero": "No ficción",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2577,7 +2577,7 @@ window.LIBROS = [
  {
   "titulo": "Noche negra",
   "autor": "Pilar Quintana",
-  "genero": "Literatura contemporánea",
+  "genero": "Psicológico / Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2586,7 +2586,7 @@ window.LIBROS = [
  {
   "titulo": "Si esto es un hombre",
   "autor": "Primo Levi",
-  "genero": "Memorias / histórico",
+  "genero": "Histórico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2604,7 +2604,7 @@ window.LIBROS = [
  {
   "titulo": "Cartas a un joven poeta",
   "autor": "Rainer Maria Rilke",
-  "genero": "Ensayo / cartas",
+  "genero": "No ficción",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2613,7 +2613,7 @@ window.LIBROS = [
  {
   "titulo": "Anatomía de la melancolía",
   "autor": "Robert Burton",
-  "genero": "Ensayo / psicología",
+  "genero": "Psicológico",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -2622,8 +2622,8 @@ window.LIBROS = [
  {
   "titulo": "El caballero de la armadura oxidada",
   "autor": "Robert Fisher",
-  "genero": "Fábula / autoayuda",
-  "dificultad": 2,
+  "genero": "Fábula",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": true,
   "trata": "Un caballero emprende un viaje simbólico para descubrir quién es realmente."
@@ -2631,7 +2631,7 @@ window.LIBROS = [
  {
   "titulo": "El rey de amarillo",
   "autor": "Robert W. Chambers",
-  "genero": "Terror / fantástico",
+  "genero": "Terror / Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -2640,7 +2640,7 @@ window.LIBROS = [
  {
   "titulo": "Los detectives salvajes",
   "autor": "Roberto Bolaño",
-  "genero": "Literatura contemporánea",
+  "genero": "Experimental / Realismo",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": false,
@@ -2649,7 +2649,7 @@ window.LIBROS = [
  {
   "titulo": "2666",
   "autor": "Roberto Bolaño",
-  "genero": "Literatura contemporánea",
+  "genero": "Experimental / Realismo",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -2658,7 +2658,7 @@ window.LIBROS = [
  {
   "titulo": "Poesía no eres tú",
   "autor": "Rosario Castellanos",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2667,7 +2667,7 @@ window.LIBROS = [
  {
   "titulo": "Distancia de rescate",
   "autor": "Samanta Schweblin",
-  "genero": "Terror / psicológico",
+  "genero": "Terror / Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2676,7 +2676,7 @@ window.LIBROS = [
  {
   "titulo": "El buen mal",
   "autor": "Samanta Schweblin",
-  "genero": "Fantástico / cuentos",
+  "genero": "Fantástico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2685,7 +2685,7 @@ window.LIBROS = [
  {
   "titulo": "Esperando a Godot",
   "autor": "Samuel Beckett",
-  "genero": "Teatro / absurdo",
+  "genero": "Existencialismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2694,7 +2694,7 @@ window.LIBROS = [
  {
   "titulo": "El último encuentro",
   "autor": "Sándor Márai",
-  "genero": "Psicológico / filosófico",
+  "genero": "Psicológico / Filosófico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2703,7 +2703,7 @@ window.LIBROS = [
  {
   "titulo": "La herencia de Ester",
   "autor": "Sándor Márai",
-  "genero": "Drama / psicológico",
+  "genero": "Drama / Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2712,7 +2712,7 @@ window.LIBROS = [
  {
   "titulo": "Divorcio en Buda",
   "autor": "Sándor Márai",
-  "genero": "Psicológico / drama",
+  "genero": "Psicológico / Drama",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2721,7 +2721,7 @@ window.LIBROS = [
  {
   "titulo": "La mujer justa",
   "autor": "Sándor Márai",
-  "genero": "Psicológico / romance",
+  "genero": "Psicológico / Romance",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2739,8 +2739,8 @@ window.LIBROS = [
  {
   "titulo": "Tienda de conveniencia",
   "autor": "Sayaka Murata",
-  "genero": "Literatura japonesa",
-  "dificultad": 2,
+  "genero": "Realismo / Psicológico",
+  "dificultad": 1,
   "largo": "Corto",
   "tengo": false,
   "trata": "Keiko, de 36 años, trabaja desde hace dieciocho en una tienda de conveniencia en Tokio y siente la presión de familiares y amigos para que se case y busque otro empleo."
@@ -2748,7 +2748,7 @@ window.LIBROS = [
  {
   "titulo": "No es un río",
   "autor": "Selva Almada",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2757,7 +2757,7 @@ window.LIBROS = [
  {
   "titulo": "Cartas de un estoico",
   "autor": "Séneca",
-  "genero": "Filosofía",
+  "genero": "Filosófico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2766,7 +2766,7 @@ window.LIBROS = [
  {
   "titulo": "La lotería",
   "autor": "Shirley Jackson",
-  "genero": "Terror / cuento",
+  "genero": "Terror",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": true,
@@ -2775,7 +2775,7 @@ window.LIBROS = [
  {
   "titulo": "Silencio",
   "autor": "Shūsaku Endō",
-  "genero": "Histórico / filosófico",
+  "genero": "Histórico / Filosófico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2784,7 +2784,7 @@ window.LIBROS = [
  {
   "titulo": "Gótico",
   "autor": "Silvia Moreno-Garcia",
-  "genero": "Terror gótico",
+  "genero": "Gótico / Terror",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -2793,7 +2793,7 @@ window.LIBROS = [
  {
   "titulo": "La furia",
   "autor": "Silvina Ocampo",
-  "genero": "Cuentos",
+  "genero": "Fantástico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2802,7 +2802,7 @@ window.LIBROS = [
  {
   "titulo": "La mujer rota",
   "autor": "Simone de Beauvoir",
-  "genero": "Psicológico / feminismo",
+  "genero": "Psicológico / Feminismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -2811,7 +2811,7 @@ window.LIBROS = [
  {
   "titulo": "El segundo sexo",
   "autor": "Simone de Beauvoir",
-  "genero": "Filosofía / feminismo",
+  "genero": "Filosófico / Feminismo",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -2820,7 +2820,7 @@ window.LIBROS = [
  {
   "titulo": "La gravedad y la gracia",
   "autor": "Simone Weil",
-  "genero": "Filosofía / espiritualidad",
+  "genero": "Filosófico",
   "dificultad": 5,
   "largo": "Corto",
   "tengo": false,
@@ -2829,7 +2829,7 @@ window.LIBROS = [
  {
   "titulo": "La cura del agua",
   "autor": "Sophie Mackintosh",
-  "genero": "Distopía / psicológico",
+  "genero": "Distopía / Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2838,7 +2838,7 @@ window.LIBROS = [
  {
   "titulo": "Solaris",
   "autor": "Stanisław Lem",
-  "genero": "Ciencia ficción filosófica",
+  "genero": "Ciencia ficción / Filosófico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -2847,7 +2847,7 @@ window.LIBROS = [
  {
   "titulo": "Veinticuatro horas en la vida de una mujer",
   "autor": "Stefan Zweig",
-  "genero": "Psicológico / drama",
+  "genero": "Psicológico / Drama",
   "dificultad": 2,
   "largo": "Corto",
   "tengo": false,
@@ -2865,7 +2865,7 @@ window.LIBROS = [
  {
   "titulo": "Jonathan Strange y el señor Norrell",
   "autor": "Susanna Clarke",
-  "genero": "Fantasía histórica",
+  "genero": "Fantasía",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": false,
@@ -2883,7 +2883,7 @@ window.LIBROS = [
  {
   "titulo": "La campana de cristal",
   "autor": "Sylvia Plath",
-  "genero": "Psicológico / autobiográfico",
+  "genero": "Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -2892,7 +2892,7 @@ window.LIBROS = [
  {
   "titulo": "Diarios completos",
   "autor": "Sylvia Plath",
-  "genero": "Diario",
+  "genero": "No ficción",
   "dificultad": 4,
   "largo": "Muy largo",
   "tengo": false,
@@ -2901,7 +2901,7 @@ window.LIBROS = [
  {
   "titulo": "Ariel",
   "autor": "Sylvia Plath",
-  "genero": "Poesía",
+  "genero": "Lírica",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2910,7 +2910,7 @@ window.LIBROS = [
  {
   "titulo": "El verano en que mi madre tuvo los ojos verdes",
   "autor": "Tatiana Țibuleac",
-  "genero": "Autobiográfico",
+  "genero": "Psicológico / Drama",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -2919,8 +2919,8 @@ window.LIBROS = [
  {
   "titulo": "Los siete maridos de Evelyn Hugo",
   "autor": "Taylor Jenkins Reid",
-  "genero": "Romance / drama",
-  "dificultad": 2,
+  "genero": "Romance / Drama",
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Una legendaria actriz de Hollywood decide contar su vida a una periodista joven, revelando los secretos de sus siete matrimonios."
@@ -2928,7 +2928,7 @@ window.LIBROS = [
  {
   "titulo": "Tess, la de los d'Urberville",
   "autor": "Thomas Hardy",
-  "genero": "Realismo / tragedia",
+  "genero": "Realismo / Drama",
   "dificultad": 4,
   "largo": "Largo",
   "tengo": false,
@@ -2937,7 +2937,7 @@ window.LIBROS = [
  {
   "titulo": "La muerte en Venecia",
   "autor": "Thomas Mann",
-  "genero": "Psicológico / clásico",
+  "genero": "Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2946,7 +2946,7 @@ window.LIBROS = [
  {
   "titulo": "La montaña mágica",
   "autor": "Thomas Mann",
-  "genero": "Filosófico / modernismo",
+  "genero": "Filosófico / Experimental",
   "dificultad": 5,
   "largo": "Muy largo",
   "tengo": false,
@@ -2955,7 +2955,7 @@ window.LIBROS = [
  {
   "titulo": "Ojos azules",
   "autor": "Toni Morrison",
-  "genero": "Realismo / psicológico",
+  "genero": "Realismo / Psicológico",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
@@ -2991,7 +2991,7 @@ window.LIBROS = [
  {
   "titulo": "El hombre en busca de sentido",
   "autor": "Viktor Frankl",
-  "genero": "Memorias / psicología",
+  "genero": "Psicológico",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -3000,7 +3000,7 @@ window.LIBROS = [
  {
   "titulo": "Caída de las nubes",
   "autor": "Violaine Bérot",
-  "genero": "Literatura contemporánea",
+  "genero": "Realismo",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -3010,7 +3010,7 @@ window.LIBROS = [
   "titulo": "La corresponsal",
   "autor": "Virginia Evans",
   "genero": "Romance",
-  "dificultad": 2,
+  "dificultad": 1,
   "largo": "Medio",
   "tengo": false,
   "trata": "Sybil Van Antwerp, una abogada jubilada de más de setenta años que está perdiendo la vista, cuenta su vida a través de cartas. Una novela epistolar sobre el duelo, la culpa y el perdón."
@@ -3018,7 +3018,7 @@ window.LIBROS = [
  {
   "titulo": "Una habitación propia",
   "autor": "Virginia Woolf",
-  "genero": "Ensayo / feminismo",
+  "genero": "Feminismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": true,
@@ -3027,7 +3027,7 @@ window.LIBROS = [
  {
   "titulo": "La señora Dalloway",
   "autor": "Virginia Woolf",
-  "genero": "Modernismo / psicológico",
+  "genero": "Experimental / Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -3036,7 +3036,7 @@ window.LIBROS = [
  {
   "titulo": "Al faro",
   "autor": "Virginia Woolf",
-  "genero": "Modernismo / psicológico",
+  "genero": "Experimental / Psicológico",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": true,
@@ -3045,7 +3045,7 @@ window.LIBROS = [
  {
   "titulo": "Las olas",
   "autor": "Virginia Woolf",
-  "genero": "Modernismo / experimental",
+  "genero": "Experimental",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": false,
@@ -3054,7 +3054,7 @@ window.LIBROS = [
  {
   "titulo": "Orlando",
   "autor": "Virginia Woolf",
-  "genero": "Modernismo",
+  "genero": "Experimental",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": false,
@@ -3063,7 +3063,7 @@ window.LIBROS = [
  {
   "titulo": "Sinsonte",
   "autor": "Walter Tevis",
-  "genero": "Literatura contemporánea",
+  "genero": "Ciencia ficción / Distopía",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -3072,7 +3072,7 @@ window.LIBROS = [
  {
   "titulo": "El ruido y la furia",
   "autor": "William Faulkner",
-  "genero": "Modernismo / experimental",
+  "genero": "Experimental",
   "dificultad": 5,
   "largo": "Medio",
   "tengo": false,
@@ -3081,7 +3081,7 @@ window.LIBROS = [
  {
   "titulo": "Mientras agonizo",
   "autor": "William Faulkner",
-  "genero": "Modernismo",
+  "genero": "Experimental",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": false,
@@ -3090,7 +3090,7 @@ window.LIBROS = [
  {
   "titulo": "Neuromante",
   "autor": "William Gibson",
-  "genero": "Cyberpunk",
+  "genero": "Ciencia ficción",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -3099,7 +3099,7 @@ window.LIBROS = [
  {
   "titulo": "El señor de las moscas",
   "autor": "William Golding",
-  "genero": "Distopía / psicológico",
+  "genero": "Distopía / Psicológico",
   "dificultad": 3,
   "largo": "Medio",
   "tengo": true,
@@ -3108,7 +3108,7 @@ window.LIBROS = [
  {
   "titulo": "Nosotros",
   "autor": "Yevgueni Zamiatin",
-  "genero": "Distopía / ciencia ficción",
+  "genero": "Distopía / Ciencia ficción",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -3117,7 +3117,7 @@ window.LIBROS = [
  {
   "titulo": "La policía de la memoria",
   "autor": "Yōko Ogawa",
-  "genero": "Distopía / psicológico",
+  "genero": "Distopía / Psicológico",
   "dificultad": 4,
   "largo": "Medio",
   "tengo": true,
@@ -3126,7 +3126,7 @@ window.LIBROS = [
  {
   "titulo": "La fórmula preferida del profesor",
   "autor": "Yōko Ogawa",
-  "genero": "Literatura japonesa",
+  "genero": "Realismo / Drama",
   "dificultad": 3,
   "largo": "Corto",
   "tengo": false,
@@ -3153,7 +3153,7 @@ window.LIBROS = [
  {
   "titulo": "El marino que perdió la gracia del mar",
   "autor": "Yukio Mishima",
-  "genero": "Literatura japonesa",
+  "genero": "Psicológico / Realismo",
   "dificultad": 4,
   "largo": "Corto",
   "tengo": false,
