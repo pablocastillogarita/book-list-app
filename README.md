@@ -1,8 +1,15 @@
 # Lista de libros
 
-Página web con todos los libros de `datos/LISTA DE LIBROS.xlsx`: título, autor,
-género, dificultad, extensión, si lo tengo y de qué trata. Tiene buscador,
-filtros (género, dificultad, extensión, lo tengo) y orden.
+App web ("Mis libros") con todos los libros de `datos/LISTA DE LIBROS.xlsx`: título, autor,
+género, dificultad, extensión, si lo tengo y de qué trata.
+
+- **Inicio:** resumen (cuántos tengo, por dificultad, extensión y género) y un libro al azar.
+- **Libros:** buscador, filtros y orden (también tocando el título de cada columna).
+  Tocar un libro abre su ficha.
+- **Autores** y **Géneros:** tocar uno muestra sus libros.
+- Se puede **instalar como app** en el celular o la compu (como la app de presupuesto)
+  y abre sin conexión. En el celular: abrir la página y elegir "Agregar a pantalla de inicio"
+  (iPhone: botón Compartir; Android: menú ⋮ → Instalar app).
 
 ## Ver la página
 
@@ -17,6 +24,18 @@ elige la rama `main` y la carpeta `/ (root)`.
 2. Ejecuta `pip install openpyxl` (solo la primera vez) y luego
    `python3 scripts/excel_a_datos.py`.
 3. Esto regenera `libros.js`, que es lo que lee la página.
+
+## Archivos de la app
+
+| Archivo | Para qué |
+|---|---|
+| `index.html` | La app completa |
+| `libros.js` | Los datos, generados desde el Excel |
+| `manifest.webmanifest`, `sw.js`, `pwa.js` | Hacen que se pueda instalar y abrir sin conexión |
+| `icon.svg`, `icon-*.png` | Iconos de la app |
+
+Si cambias archivos de la app y quieres forzar que el celular los vuelva a bajar, sube el
+número de `CACHE` en `sw.js` (por ejemplo `mis-libros-v2`).
 
 ## EPUBs
 
