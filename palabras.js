@@ -147,11 +147,15 @@
       var x = (a.items || {})[id], y = (b.items || {})[id];
       out[id] = !x ? y : !y ? x : ((y.mod || 0) > (x.mod || 0) ? y : x);
     });
-    return { items: out };
+    var la = a.leyendo, lb = b.leyendo;
+    var r = { items: out };
+    var ley = !la ? lb : !lb ? la : ((lb.mod || 0) > (la.mod || 0) ? lb : la);
+    if (ley) r.leyendo = ley;
+    return r;
   }
   function canon(d) {
     var it = (d && d.items) || {};
-    return JSON.stringify(Object.keys(it).sort().map(function (k) { return it[k]; }));
+    return JSON.stringify([d && d.leyendo || null].concat(Object.keys(it).sort().map(function (k) { return it[k]; })));
   }
   var cadena = Promise.resolve(), pendiente = false;
   function sincronizar() {
@@ -306,9 +310,17 @@
   }
 
   // Pestaña Palabras.
-  var V = { q: "", libro: "", orden: "recientes", ultimoLibro: "" };
+  // Libro que estoy leyendo (se sincroniza igual que las palabras).
+  function getLeyendo() { return datos.leyendo && datos.leyendo.libro ? porClave[datos.leyendo.libro] || null : null; }
+  function setLeyendo(b) {
+    datos.leyendo = { libro: b ? claveLibro(b) : "", mod: Date.now() };
+    guardarLocal(); sincronizarPronto();
+  }
+
+  var V = { q: "", libro: "", orden: "recientes", ultimoLibro: null };
   function renderTab(cont) {
-    var sel = V.ultimoLibro === "" ? null : +V.ultimoLibro;
+    var ley = getLeyendo();
+    var sel = V.ultimoLibro === null ? (ley ? ley.id : null) : V.ultimoLibro === "" ? null : +V.ultimoLibro;
     cont.innerHTML =
       '<div class="card"><h2>Buscar una palabra</h2>' + formHTML(true, sel) + '<div class="pal-nueva"></div></div>' +
       '<div class="card filters-card"><input class="search" id="pq" type="search" placeholder="Buscar en mis palabras…" aria-label="Buscar en mis palabras">' +
@@ -392,6 +404,8 @@
     onChange: function (f) { oyentes.push(f); },
     contar: function () { return lista().length; },
     contarLibro: function (b) { return delLibro(b).length; },
+    leyendo: getLeyendo,
+    setLeyendo: setLeyendo,
     montarFicha: montarFicha,
     renderTab: renderTab,
     repintarTab: function () { if (tabPintar && document.getElementById("plist")) tabPintar(); },

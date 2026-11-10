@@ -184,6 +184,14 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
 .sheet p { margin: 0; font-size: 15px; line-height: 1.6; }
 .sheet-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 
+/* Leyendo */
+.ley { display: grid; gap: 10px; }
+.ley .t { font: 600 22px/1.25 var(--f-book); }
+.ley .a { color: var(--muted); }
+.ley-vacio { color: var(--muted); font-size: 14px; margin: 0; }
+.badge.ley-b { background: var(--accent-soft); color: var(--accent); }
+.btn.on { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
 /* Palabras */
 .top-actions { display: flex; gap: 8px; }
 .pal-sec { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
@@ -270,6 +278,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   <!-- Inicio -->
   <section id="v-inicio" hidden>
     <div style="display:grid;gap:18px">
+      <div class="card ley" id="leyendo"></div>
       <div class="tiles" id="tiles"></div>
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
@@ -309,6 +318,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
           <div class="pick-actions">
             <button class="btn primary" type="button" id="pick-again">Otro al azar</button>
             <button class="btn" type="button" id="pick-open">Ver detalle</button>
+            <button class="btn" type="button" id="pick-leer">Empezar a leerlo</button>
           </div>
         </div>
       </div>
@@ -505,6 +515,26 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     $("pick-from").value = S.pick;
     nuevoAzar();
   }
+  function renderLeyendo() {
+    var b = Palabras.leyendo();
+    if (!b) {
+      $("leyendo").innerHTML = '<h3>Estoy leyendo</h3><p class="ley-vacio">Todavía no marcaste ningún libro. Abrí la ficha del libro que estás leyendo y tocá «📖 Lo estoy leyendo».</p>' +
+        '<div class="pick-actions"><button class="btn" type="button" data-go="libros">Elegir libro</button></div>';
+      return;
+    }
+    var n = Palabras.contarLibro(b);
+    $("leyendo").innerHTML = '<h3>Estoy leyendo</h3><div class="pick"><span class="t">' + esc(b.titulo) + '</span><span class="a">' + esc(b.autor) +
+      " · " + plural(n, "palabra guardada", "palabras guardadas") + "</span></div>" +
+      '<div class="pick-actions"><button class="btn primary" type="button" data-ley="palabra">Buscar una palabra</button>' +
+      '<button class="btn" type="button" data-ley="ver">Ver ficha</button>' +
+      '<button class="btn" type="button" data-ley="quitar">Ya lo terminé</button></div>';
+  }
+  $("leyendo").addEventListener("click", function (e) {
+    var a = e.target.closest("[data-ley]"), b = Palabras.leyendo(); if (!a || !b) return;
+    if (a.dataset.ley === "quitar") { Palabras.setLeyendo(null); return; }
+    abrir(b.id);
+    if (a.dataset.ley === "palabra") { var i = document.querySelector("#d-palabras input[name=palabra]"); if (i) { i.scrollIntoView({ block: "center" }); i.focus(); } }
+  });
   var pickId = null;
   function nuevoAzar() {
     var pool = LIBROS.filter(function (b) { return !S.pick || (S.pick === "si") === b.tengo; });
@@ -516,6 +546,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   }
   $("pick-again").addEventListener("click", nuevoAzar);
   $("pick-open").addEventListener("click", function () { if (pickId !== null) abrir(pickId); });
+  $("pick-leer").addEventListener("click", function () { if (pickId !== null) { Palabras.setLeyendo(LIBROS[pickId]); window.scrollTo(0, 0); } });
   $("pick-from").addEventListener("change", function () { S.pick = this.value; save(); nuevoAzar(); });
   $("v-inicio").addEventListener("click", function (e) {
     var el = e.target.closest("[data-f]"); if (el) verLibros(JSON.parse(el.dataset.f));
@@ -571,13 +602,14 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     $("chips").innerHTML = S.autor ? '<button type="button" class="chip" data-clear-autor>Autor: ' + esc(S.autor) + ' <span aria-label="Quitar">✕</span></button>' : "";
     $("count").textContent = res.length === LIBROS.length ? "Mostrando los " + res.length + " libros" : res.length + " de " + LIBROS.length + " libros";
     if (!res.length) { $("list").innerHTML = '<p class="empty">Ningún libro coincide con estos filtros.</p>'; return; }
+    var ley = Palabras.leyendo();
     $("list").innerHTML = res.map(function (b) {
       return '<button type="button" class="row" data-id="' + b.id + '">' +
         '<span class="book"><span class="t" style="display:block">' + esc(b.titulo) + '</span><span class="a">' + esc(b.autor) + "</span>" +
           (b.trata ? '<span class="trata">' + esc(b.trata) + "</span>" : "") + "</span>" +
         '<span class="c-tags tags">' + b.tags.map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</span>" +
         '<span class="c-meta"><span>' + difHTML(b.dificultad) + '</span><span class="len">' + esc(b.largo || "—") + "</span></span>" +
-        '<span class="c-state">' + (b.tengo ? '<span class="badge si">Lo tengo</span>' : '<span class="badge no">No</span>') + "</span>" +
+        '<span class="c-state">' + (ley === b ? '<span class="badge ley-b">📖 Leyendo</span>' : b.tengo ? '<span class="badge si">Lo tengo</span>' : '<span class="badge no">No</span>') + "</span>" +
         "</button>";
     }).join("");
   }
@@ -626,9 +658,15 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
       (b.trata ? "<div style=\"display:grid;gap:6px\"><h3>¿De qué trata?</h3><p>" + esc(b.trata) + "</p></div>" : "") +
       '<div id="d-palabras"></div>' +
       '<div class="sheet-actions">' + (b.epub ? '<a class="btn primary" href="' + esc(b.epub) + '" download>Descargar EPUB</a>' : "") +
+        '<button type="button" class="btn' + (Palabras.leyendo() === b ? " on" : "") + '" id="d-leer">' + (Palabras.leyendo() === b ? "✓ Lo estoy leyendo" : "📖 Lo estoy leyendo") + "</button>" +
         '<button type="button" class="btn" data-autor="' + esc(b.autor) + '">Más de este autor</button>' +
         '<button type="button" class="btn" id="d-close">Cerrar</button></div>';
     Palabras.montarFicha($("d-palabras"), b);
+    $("d-leer").addEventListener("click", function () {
+      var on = Palabras.leyendo() === b;
+      Palabras.setLeyendo(on ? null : b);
+      this.classList.toggle("on", !on); this.textContent = on ? "📖 Lo estoy leyendo" : "✓ Lo estoy leyendo";
+    });
     mostrarSheet();
   }
   function mostrarSheet() {
@@ -654,12 +692,16 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
 
   // ---------- Palabras ----------
   function contarPalabras() { var n = Palabras.contar(); $("n-palabras").textContent = n || ""; }
-  Palabras.onChange(function () { contarPalabras(); if (S.tab === "palabras") Palabras.repintarTab(); });
+  Palabras.onChange(function () {
+    contarPalabras(); renderLeyendo();
+    if (S.tab === "palabras") Palabras.repintarTab();
+    if (S.tab === "libros") renderLibros();
+  });
   Palabras.init({ libros: LIBROS, abrirLibro: abrir });
   contarPalabras();
 
   // ---------- Arranque ----------
-  applyTheme(); syncInputs(); renderInicio();
+  applyTheme(); syncInputs(); renderInicio(); renderLeyendo();
   go(location.hash ? location.hash.slice(1) : S.tab);
 })();
 </script>

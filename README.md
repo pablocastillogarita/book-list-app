@@ -7,6 +7,8 @@ género, dificultad, extensión, si lo tengo y de qué trata.
 - **Libros:** buscador, filtros y orden (también tocando el título de cada columna).
   Tocar un libro abre su ficha.
 - **Autores** y **Géneros:** tocar uno muestra sus libros.
+- **Estoy leyendo:** en la ficha de un libro toca «📖 Lo estoy leyendo». Aparece arriba en
+  Inicio con un botón para buscar palabras de ese libro, y se sincroniza igual que las palabras.
 - **Palabras:** en la ficha de un libro, escribe una palabra que no conozcas y Gemini te da
   su significado en palabras sencillas, con un ejemplo. Queda guardada con ese libro.
   La pestaña Palabras muestra todas, con buscador y filtro por libro. (Ver abajo cómo activarlo.)
