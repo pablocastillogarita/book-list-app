@@ -3,7 +3,7 @@
 App web ("Mis libros") con todos los libros de `datos/LISTA DE LIBROS.xlsx`: título, autor,
 género, dificultad, extensión, si lo tengo y de qué trata.
 
-- **Inicio:** resumen (cuántos tengo, por dificultad, extensión y género) y un libro al azar.
+- **Inicio:** resumen (cuántos tengo, por dificultad, extensión y género) y el libro que estoy leyendo.
 - **Libros:** buscador, filtros y orden (también tocando el título de cada columna).
   Tocar un libro abre su ficha.
 - **Autores** y **Géneros:** tocar uno muestra sus libros.
