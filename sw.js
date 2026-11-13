@@ -1,7 +1,7 @@
 // Service worker: permite abrir la app instalada sin conexión.
 // Primero intenta la red (así un cambio nuevo se ve enseguida) y si no hay conexión usa la copia guardada.
 // Los EPUB se guardan solo después de descargarlos una vez.
-const CACHE = "mis-libros-v2";
+const CACHE = "mis-libros-v3";
 const FILES = ["./", "index.html", "libros.js", "palabras.js", "pwa.js", "manifest.webmanifest",
   "icon.svg", "icon-180.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png"];
 

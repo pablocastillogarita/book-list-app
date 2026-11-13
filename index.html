@@ -298,29 +298,11 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
           <div class="bars" id="by-largo"></div>
         </div>
       </div>
-      <div class="grid2">
-        <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
-            <h2>Géneros principales</h2><button class="linkbtn" type="button" data-go="generos">Ver todos</button>
-          </div>
-          <div class="bars" id="by-gen"></div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+          <h2>Géneros principales</h2><button class="linkbtn" type="button" data-go="generos">Ver todos</button>
         </div>
-        <div class="card">
-          <h3>¿Qué leo ahora?</h3>
-          <div class="pick" id="pick"></div>
-          <label class="filters" style="gap:6px"><span style="font-size:13px;color:var(--muted)">Elegir entre</span>
-            <select id="pick-from">
-              <option value="si">Los que tengo</option>
-              <option value="no">Los que me faltan</option>
-              <option value="">Todos</option>
-            </select>
-          </label>
-          <div class="pick-actions">
-            <button class="btn primary" type="button" id="pick-again">Otro al azar</button>
-            <button class="btn" type="button" id="pick-open">Ver detalle</button>
-            <button class="btn" type="button" id="pick-leer">Empezar a leerlo</button>
-          </div>
-        </div>
+        <div class="bars" id="by-gen"></div>
       </div>
     </div>
   </section>
@@ -421,7 +403,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   });
 
   // ---------- Estado (se recuerda en este navegador) ----------
-  var DEF = { tab: "inicio", tema: "auto", q: "", genero: "", dif: "", largo: "", tengo: "", autor: "", orden: "autor-asc", pick: "si" };
+  var DEF = { tab: "inicio", tema: "auto", q: "", genero: "", dif: "", largo: "", tengo: "", autor: "", orden: "autor-asc" };
   var S = Object.assign({}, DEF);
   try { Object.assign(S, JSON.parse(localStorage.getItem("mis-libros") || "{}")); } catch (e) {}
   function save() { try { localStorage.setItem("mis-libros", JSON.stringify(S)); } catch (e) {} }
@@ -512,8 +494,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     $("by-gen").innerHTML = bars(generosList.slice(0, 8).map(function (g) {
       return { label: g.name, n: g.n, own: g.own, f: { genero: g.name } };
     }));
-    $("pick-from").value = S.pick;
-    nuevoAzar();
   }
   function renderLeyendo() {
     var b = Palabras.leyendo();
@@ -535,19 +515,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     abrir(b.id);
     if (a.dataset.ley === "palabra") { var i = document.querySelector("#d-palabras input[name=palabra]"); if (i) { i.scrollIntoView({ block: "center" }); i.focus(); } }
   });
-  var pickId = null;
-  function nuevoAzar() {
-    var pool = LIBROS.filter(function (b) { return !S.pick || (S.pick === "si") === b.tengo; });
-    if (!pool.length) { $("pick").innerHTML = '<span class="a">No hay libros en este grupo.</span>'; pickId = null; return; }
-    var b = pool[Math.floor(Math.random() * pool.length)];
-    pickId = b.id;
-    $("pick").innerHTML = '<span class="t">' + esc(b.titulo) + '</span><span class="a">' + esc(b.autor) + " · " +
-      (b.dificultad ? b.dificultad + "/5" : "—") + " · " + esc(b.largo || "—") + "</span>";
-  }
-  $("pick-again").addEventListener("click", nuevoAzar);
-  $("pick-open").addEventListener("click", function () { if (pickId !== null) abrir(pickId); });
-  $("pick-leer").addEventListener("click", function () { if (pickId !== null) { Palabras.setLeyendo(LIBROS[pickId]); window.scrollTo(0, 0); } });
-  $("pick-from").addEventListener("change", function () { S.pick = this.value; save(); nuevoAzar(); });
   $("v-inicio").addEventListener("click", function (e) {
     var el = e.target.closest("[data-f]"); if (el) verLibros(JSON.parse(el.dataset.f));
   });
