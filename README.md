@@ -12,6 +12,14 @@ género, dificultad, extensión, si lo tengo y de qué trata.
 - **Palabras:** en la ficha de un libro, escribe una palabra que no conozcas y Gemini te da
   su significado en palabras sencillas, con un ejemplo. Queda guardada con ese libro.
   La pestaña Palabras muestra todas, con buscador y filtro por libro. (Ver abajo cómo activarlo.)
+  Con **⬇️ Descargar JSON** bajás tus palabras agrupadas por libro, cada una con `palabra`,
+  `significado` y `oracion` (la frase del libro si la guardaste, si no el ejemplo). Si elegiste
+  un libro en el filtro, baja solo ese libro.
+- **Tu cuenta (entrar con Google):** en ⚙️ Ajustes → «Entrar con Google». Tus palabras, el libro
+  que estás leyendo, el tema, los filtros y la clave de Gemini quedan en tu cuenta: en otro
+  dispositivo, o si borrás la app y la volvés a instalar, entrás de nuevo y vuelve todo.
+  Sin conexión o sin sesión la app funciona igual con lo guardado en el dispositivo.
+  (Hay que activarlo una vez: ver «Entrar con Google: configurar Firebase» abajo.)
 - Se puede **instalar como app** en el celular o la compu (como la app de presupuesto)
   y abre sin conexión. En el celular: abrir la página y elegir "Agregar a pantalla de inicio"
   (iPhone: botón Compartir; Android: menú ⋮ → Instalar app).
@@ -36,17 +44,44 @@ elige la rama `main` y la carpeta `/ (root)`.
 |---|---|
 | `index.html` | La app completa |
 | `libros.js` | Los datos, generados desde el Excel |
-| `palabras.js` | Búsqueda de palabras con Gemini y sincronización con el Gist |
+| `palabras.js` | Búsqueda de palabras con Gemini y sincronización (cuenta de Google o Gist) |
+| `nube.js`, `nube-config.js` | Entrar con Google y guardar en tu cuenta (Firebase) |
+| `firestore.rules` | Reglas de Firestore: cada cuenta solo ve lo suyo |
 | `manifest.webmanifest`, `sw.js`, `pwa.js` | Hacen que se pueda instalar y abrir sin conexión |
 | `icon.svg`, `icon-*.png` | Iconos de la app |
 
 Si cambias archivos de la app y quieres forzar que el celular los vuelva a bajar, sube el
-número de `CACHE` en `sw.js` (por ejemplo `mis-libros-v3`).
+número de `CACHE` en `sw.js` (por ejemplo `mis-libros-v6`).
+
+## Entrar con Google: configurar Firebase
+
+Se hace una sola vez (unos 10 minutos, gratis; el plan gratis de Firebase sobra para esto).
+
+1. Entrá a https://console.firebase.google.com con tu cuenta de Google y tocá
+   **Crear un proyecto**. Nombre: `mis-libros`. Podés desactivar Google Analytics.
+2. En el menú **Compilación → Authentication** tocá **Comenzar**. En *Método de acceso* elegí
+   **Google**, activalo, elegí tu correo como correo de asistencia y **Guardar**.
+3. Todavía en Authentication, pestaña **Configuración → Dominios autorizados → Agregar dominio**
+   y poné la dirección donde abrís la app (por ejemplo `pablocastillogarita.github.io`).
+4. En **Compilación → Firestore Database** tocá **Crear base de datos** (ubicación: la que
+   ofrezca; modo: **producción**). Después, en la pestaña **Reglas**, borrá lo que hay, pegá el
+   contenido de `firestore.rules` y tocá **Publicar**.
+5. En el engranaje ⚙️ → **Configuración del proyecto**, abajo en *Tus apps* tocá el ícono web
+   `</>`, ponele un nombre (`Mis libros`) y **Registrar app**. Te muestra un bloque
+   `const firebaseConfig = { apiKey: ..., authDomain: ..., projectId: ..., ... }`.
+6. Copiá ese bloque dentro de `nube-config.js`, en lugar de `null`:
+   `window.NUBE_CONFIG = { apiKey: "...", authDomain: "...", projectId: "...", ... };`
+   (no es una clave secreta: está hecha para ir en la página; tus datos los protegen las reglas).
+
+Listo: en ⚙️ Ajustes aparece «Entrar con Google». La primera vez que entrás, lo que ya tenías en
+ese dispositivo (y lo que venía del Gist) se sube a tu cuenta y se mezcla con lo de los demás.
+Con sesión iniciada ya no hace falta el token de GitHub.
 
 ## Palabras: activar Gemini y la sincronización
 
-En la app, toca **⚙️ Ajustes** y pega dos claves (una vez en el celular y una vez en la compu;
-se guardan solo en ese navegador, nunca en el repo):
+Si entraste con Google, la clave de Gemini se pone una sola vez y llega sola a tus otros
+dispositivos, y no hace falta el token de GitHub. Si no, en **⚙️ Ajustes** pega dos claves (una
+vez en el celular y una vez en la compu; se guardan solo en ese navegador, nunca en el repo):
 
 1. **Clave de Gemini** (gratis): en https://aistudio.google.com/apikey → *Create API key*.
    El plan gratis tiene un límite diario de búsquedas; si se acaba, la app avisa y al día
