@@ -1,11 +1,12 @@
 // Palabras: buscar palabras que no conozco con Gemini, guardarlas por libro
-// y sincronizarlas entre dispositivos con un Gist privado de GitHub.
-// Las claves (Gemini y GitHub) se guardan solo en este navegador; nunca van en el código.
+// y sincronizarlas entre dispositivos: con tu cuenta de Google (nube.js) o, si no entraste,
+// con un Gist privado de GitHub. También se sincronizan el libro que estoy leyendo y los filtros.
+// Las claves se guardan en este navegador (y, si entraste con Google, en tu cuenta); nunca van en el código.
 (function () {
   "use strict";
 
   var K_DATOS = "mis-libros-palabras";   // { items: { id: palabra } }
-  var K_CLAVES = "mis-libros-claves";    // { gemini, github, gistId, modelo }
+  var K_CLAVES = "mis-libros-claves";    // { gemini, geminiMod, github, gistId, modelo }
   var GIST_FILE = "mis-libros-palabras.json";
   var MODELO_DEF = "gemini-flash-lite-latest";
 
@@ -19,7 +20,8 @@
   var datos = leer(K_DATOS, { items: {} });
   if (!datos.items) datos = { items: {} };
   var claves = leer(K_CLAVES, {});
-  var LIBROS = [], porClave = {}, abrirLibro = function () {}, oyentes = [];
+  var LIBROS = [], porClave = {}, abrirLibro = function () {}, oyentes = [], oyentesPrefs = [];
+  var Nube = window.Nube || { configurada: function () { return false; }, activa: function () { return false; }, onChange: function () {}, iniciar: function () {} };
 
   function claveLibro(b) { return b ? b.titulo + " — " + b.autor : ""; }
   function guardarLocal() { escribir(K_DATOS, datos); oyentes.forEach(function (f) { f(); }); }
@@ -147,23 +149,69 @@
       var x = (a.items || {})[id], y = (b.items || {})[id];
       out[id] = !x ? y : !y ? x : ((y.mod || 0) > (x.mod || 0) ? y : x);
     });
-    var la = a.leyendo, lb = b.leyendo;
     var r = { items: out };
-    var ley = !la ? lb : !lb ? la : ((lb.mod || 0) > (la.mod || 0) ? lb : la);
-    if (ley) r.leyendo = ley;
+    ["leyendo", "prefs"].forEach(function (k) {   // el más reciente gana
+      var x = a[k], y = b[k], v = !x ? y : !y ? x : ((y.mod || 0) > (x.mod || 0) ? y : x);
+      if (v) r[k] = v;
+    });
     return r;
   }
   function canon(d) {
     var it = (d && d.items) || {};
-    return JSON.stringify([d && d.leyendo || null].concat(Object.keys(it).sort().map(function (k) { return it[k]; })));
+    return JSON.stringify([d && d.leyendo || null, d && d.prefs || null].concat(Object.keys(it).sort().map(function (k) { return it[k]; })));
+  }
+  function aplicarRemoto(mezcla) {
+    var prefsAntes = JSON.stringify(datos.prefs || null);
+    var cambio = canon(mezcla) !== canon(datos);
+    datos = mezcla;
+    if (cambio) guardarLocal();
+    if (JSON.stringify(datos.prefs || null) !== prefsAntes && datos.prefs) {
+      oyentesPrefs.forEach(function (f) { f(datos.prefs.v || {}); });
+    }
+  }
+  function hora() { return new Date().toLocaleTimeString("es-CR", { hour: "numeric", minute: "2-digit" }); }
+
+  // ---------- Sincronización con la cuenta de Google ----------
+  // Un documento por cuenta: { datos: "<json de palabras, leyendo y filtros>", gemini, geminiMod }.
+  async function sincronizarNube() {
+    if (!navigator.onLine) { setEstado("Sin conexión: se guardó aquí y se sube a tu cuenta al volver.", "local"); return; }
+    setEstado("Sincronizando…", "busy");
+    try {
+      await Nube.transaccion(function (rem) {
+        rem = rem || {};
+        var remoto = { items: {} };
+        try { if (rem.datos) remoto = JSON.parse(rem.datos); } catch (e) {}
+        var mezcla = mezclar(datos, remoto);
+        aplicarRemoto(mezcla);
+        var subir = {};
+        if (canon(mezcla) !== canon(remoto)) subir.datos = JSON.stringify(mezcla);
+        // Clave de Gemini: la más reciente gana (una clave vieja sin fecha cuenta como muy antigua).
+        var modL = claves.geminiMod || (claves.gemini ? 1 : 0), modR = rem.geminiMod || 0;
+        if (modR > modL) { claves.gemini = rem.gemini || ""; claves.geminiMod = modR; guardarClaves(); }
+        else if (modL > modR) { subir.gemini = claves.gemini || ""; subir.geminiMod = modL; }
+        return Object.keys(subir).length ? subir : null;
+      });
+      setEstado("Guardado en tu cuenta " + hora(), "ok");
+    } catch (e) {
+      if (e && e.message === "SIN_SESION") { sincronizar(); return; }
+      var c = (e && e.code) || "";
+      if (c === "permission-denied") setEstado("Firebase no dejó guardar: revisá las reglas de Firestore (ver README).", "err");
+      else setEstado("No se pudo sincronizar ahora; quedó guardado aquí.", "err");
+    }
   }
   var cadena = Promise.resolve(), pendiente = false;
   function sincronizar() {
-    if (!claves.github) { setEstado("Solo en este dispositivo. Poné un token de GitHub en Ajustes para verlas en la compu y el celular.", "local"); return Promise.resolve(); }
+    if (!Nube.activa() && !claves.github) {
+      setEstado(Nube.configurada() ? "Solo en este dispositivo. Entrá con Google en Ajustes para no perderlas y verlas en todos lados."
+        : "Solo en este dispositivo. Poné un token de GitHub en Ajustes para verlas en la compu y el celular.", "local");
+      return Promise.resolve();
+    }
     if (pendiente) return cadena;
     pendiente = true;
     cadena = cadena.then(async function () {
       pendiente = false;
+      if (Nube.activa()) return sincronizarNube();
+      if (!claves.github) return;
       if (!navigator.onLine) { setEstado("Sin conexión: se guardó aquí y se sincroniza al volver.", "local"); return; }
       setEstado("Sincronizando…", "busy");
       try {
@@ -173,16 +221,14 @@
         if (!r.ok) throw r;
         var remoto = (await contenidoGist(await r.json())) || { items: {} };
         var mezcla = mezclar(datos, remoto);
-        var cambioLocal = canon(mezcla) !== canon(datos);
         var cambioRemoto = canon(mezcla) !== canon(remoto);
-        datos = mezcla;
-        if (cambioLocal) guardarLocal();
+        aplicarRemoto(mezcla);
         if (cambioRemoto) {
           var files = {}; files[GIST_FILE] = { content: JSON.stringify(datos) };
           var p = await gh("/gists/" + claves.gistId, { method: "PATCH", body: JSON.stringify({ files: files }) });
           if (!p.ok) throw p;
         }
-        setEstado("Sincronizado " + new Date().toLocaleTimeString("es-CR", { hour: "numeric", minute: "2-digit" }), "ok");
+        setEstado("Sincronizado " + hora(), "ok");
       } catch (e) {
         var st = e && e.status;
         if (st === 401 || st === 403) setEstado("GitHub no aceptó el token (o no tiene permiso de gists). Revisalo en Ajustes.", "err");
@@ -316,6 +362,14 @@
     datos.leyendo = { libro: b ? claveLibro(b) : "", mod: Date.now() };
     guardarLocal(); sincronizarPronto();
   }
+  // Filtros y tema de la app (los manda index.html). Un dispositivo nuevo con todo por defecto
+  // no pisa lo que ya hay en la cuenta.
+  function setPrefs(v, def) {
+    var j = JSON.stringify(v);
+    if (datos.prefs ? JSON.stringify(datos.prefs.v) === j : j === JSON.stringify(def)) return;
+    datos.prefs = { v: v, mod: Date.now() };
+    escribir(K_DATOS, datos); sincronizarPronto();
+  }
 
   var V = { q: "", libro: "", orden: "recientes", ultimoLibro: null };
   function renderTab(cont) {
@@ -368,14 +422,31 @@
   var tabPintar = null;
 
   // Ajustes.
+  function cuentaHTML() {
+    if (!Nube.configurada()) return "";
+    var q = Nube.quien(), err = Nube.error ? Nube.error() : "";
+    var cuerpo = q
+      ? '<p class="cuenta-quien">Entraste como <strong>' + esc(q.nombre || q.correo) + "</strong>" + (q.nombre && q.correo ? '<br><span>' + esc(q.correo) + "</span>" : "") + "</p>" +
+        '<p class="pal-ayuda">Tus palabras, el libro que estás leyendo, los filtros y la clave de Gemini se guardan en tu cuenta. En otro dispositivo (o si borrás la app) solo entrá de nuevo con Google.</p>' +
+        '<div class="sheet-actions"><button type="button" class="btn" id="aj-salir">Cerrar sesión</button></div>'
+      : '<p class="pal-ayuda">Entrá con tu cuenta de Google para tener tus palabras, el libro que estás leyendo, los filtros y la clave de Gemini en el celular y la compu. Si borrás la app, entrás de nuevo y vuelve todo.</p>' +
+        '<div class="sheet-actions"><button type="button" class="btn primary" id="aj-entrar"><span aria-hidden="true">G</span> Entrar con Google</button></div>';
+    return '<section class="cuenta"><h3>Tu cuenta</h3>' + cuerpo + (err ? '<p class="pal-sync" data-tipo="err">' + esc(err) + "</p>" : "") + "</section>";
+  }
+
   function montarAjustes(cont) {
+    var conNube = Nube.configurada(), activa = Nube.activa();
     cont.innerHTML =
-      '<h2 class="t" id="d-title">Ajustes de palabras</h2>' +
-      '<p class="pal-ayuda">Las claves se guardan solo en este navegador. Hay que ponerlas una vez en el celular y una vez en la compu.</p>' +
+      '<h2 class="t" id="d-title">Ajustes</h2>' +
+      '<div data-cuenta>' + cuentaHTML() + '</div>' +
       '<label class="pal-campo"><span>Clave de Gemini</span><input type="password" id="aj-gem" autocomplete="off" spellcheck="false" placeholder="AIza…"></label>' +
-      '<p class="pal-ayuda">Sacala gratis en <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (botón «Create API key»).</p>' +
+      '<p class="pal-ayuda">Sacala gratis en <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (botón «Create API key»).' +
+        (conNube ? " Si entraste con Google, se guarda en tu cuenta y no hay que volver a ponerla." : " Se guarda solo en este navegador.") + "</p>" +
+      (conNube ? '<details class="aj-gh"' + (!activa && claves.github ? " open" : "") + '><summary>Otra forma de sincronizar: token de GitHub</summary>' : "") +
       '<label class="pal-campo"><span>Token de GitHub (para sincronizar)</span><input type="password" id="aj-gh" autocomplete="off" spellcheck="false" placeholder="ghp_…"></label>' +
-      '<p class="pal-ayuda">Crealo en <a href="https://github.com/settings/tokens/new?scopes=gist&description=Mis%20libros%20-%20palabras" target="_blank" rel="noopener">GitHub → Tokens</a>: dejá marcado solo «gist», elegí «No expiration» y tocá «Generate token». Las palabras quedan en un Gist privado de tu cuenta.</p>' +
+      '<p class="pal-ayuda">Crealo en <a href="https://github.com/settings/tokens/new?scopes=gist&description=Mis%20libros%20-%20palabras" target="_blank" rel="noopener">GitHub → Tokens</a>: dejá marcado solo «gist», elegí «No expiration» y tocá «Generate token». Las palabras quedan en un Gist privado de tu cuenta.' +
+        (conNube ? " Si entrás con Google, se usa tu cuenta de Google en lugar del token." : "") + "</p>" +
+      (conNube ? "</details>" : "") +
       '<label class="pal-check"><input type="checkbox" id="aj-ver"> Mostrar claves</label>' +
       '<p class="pal-sync" data-sync-estado></p>' +
       '<div class="sheet-actions"><button type="button" class="btn primary" id="aj-ok">Guardar</button>' +
@@ -383,20 +454,36 @@
         '<button type="button" class="btn" id="d-close">Cerrar</button></div>';
     $("aj-gem").value = claves.gemini || ""; $("aj-gh").value = claves.github || "";
     cont.querySelector("[data-sync-estado]").textContent = estadoSync.txt;
+    cont.querySelector("[data-sync-estado]").dataset.tipo = estadoSync.tipo;
     $("aj-ver").addEventListener("change", function () { $("aj-gem").type = $("aj-gh").type = this.checked ? "text" : "password"; });
     function guardar() {
       var g = $("aj-gem").value.trim(), t = $("aj-gh").value.trim();
       if (t !== (claves.github || "")) claves.gistId = "";
+      if (g !== (claves.gemini || "")) claves.geminiMod = Date.now();
       claves.gemini = g; claves.github = t; guardarClaves();
     }
     $("aj-ok").addEventListener("click", function () { guardar(); setEstado("Guardado.", "ok"); sincronizar(); });
     $("aj-sync").addEventListener("click", function () { guardar(); sincronizar(); });
+    var caja = cont.querySelector("[data-cuenta]");
+    caja.addEventListener("click", function (e) {
+      if (e.target.closest("#aj-entrar")) { e.target.closest("button").disabled = true; Nube.entrar().then(pintarCuenta); }
+      if (e.target.closest("#aj-salir")) { Nube.salir().then(function () { setEstado("Cerraste sesión. Lo que ya tenías sigue guardado en este dispositivo.", "local"); }); }
+    });
+    function pintarCuenta() { if (caja.isConnected) caja.innerHTML = cuentaHTML(); }
+    ajustesCuenta = function () {
+      pintarCuenta();
+      // Si entraste con Google, puede haber llegado la clave de Gemini desde tu cuenta.
+      if ($("aj-gem") && !$("aj-gem").value && claves.gemini) $("aj-gem").value = claves.gemini;
+    };
   }
+  var ajustesCuenta = function () {};
 
   window.Palabras = {
     init: function (opts) {
       LIBROS = opts.libros || []; abrirLibro = opts.abrirLibro || abrirLibro;
       LIBROS.forEach(function (b) { porClave[claveLibro(b)] = b; });
+      Nube.onChange(function () { ajustesCuenta(); sincronizar().then(ajustesCuenta); });
+      Nube.iniciar();
       sincronizar();
       addEventListener("online", sincronizarPronto);
       document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") sincronizarPronto(); });
@@ -406,6 +493,8 @@
     contarLibro: function (b) { return delLibro(b).length; },
     leyendo: getLeyendo,
     setLeyendo: setLeyendo,
+    setPrefs: setPrefs,
+    onPrefs: function (f) { oyentesPrefs.push(f); },
     montarFicha: montarFicha,
     renderTab: renderTab,
     repintarTab: function () { if (tabPintar && document.getElementById("plist")) tabPintar(); },
