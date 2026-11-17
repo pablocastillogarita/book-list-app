@@ -12,6 +12,9 @@ género, dificultad, extensión, si lo tengo y de qué trata.
 - **Palabras:** en la ficha de un libro, escribe una palabra que no conozcas y Gemini te da
   su significado en palabras sencillas, con un ejemplo. Queda guardada con ese libro.
   La pestaña Palabras muestra todas, con buscador y filtro por libro. (Ver abajo cómo activarlo.)
+  Con **⬇️ Descargar JSON** bajás tus palabras agrupadas por libro, cada una con `palabra`,
+  `significado` y `oracion` (la frase del libro si la guardaste, si no el ejemplo). Si elegiste
+  un libro en el filtro, baja solo ese libro.
 - **Tu cuenta (entrar con Google):** en ⚙️ Ajustes → «Entrar con Google». Tus palabras, el libro
   que estás leyendo, el tema, los filtros y la clave de Gemini quedan en tu cuenta: en otro
   dispositivo, o si borrás la app y la volvés a instalar, entrás de nuevo y vuelve todo.
@@ -48,7 +51,7 @@ elige la rama `main` y la carpeta `/ (root)`.
 | `icon.svg`, `icon-*.png` | Iconos de la app |
 
 Si cambias archivos de la app y quieres forzar que el celular los vuelva a bajar, sube el
-número de `CACHE` en `sw.js` (por ejemplo `mis-libros-v5`).
+número de `CACHE` en `sw.js` (por ejemplo `mis-libros-v6`).
 
 ## Entrar con Google: configurar Firebase
 

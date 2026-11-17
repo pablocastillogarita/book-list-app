@@ -3,7 +3,7 @@
 // Los EPUB se guardan solo después de descargarlos una vez.
 // Las librerías de Firebase (para entrar con Google) se guardan la primera vez y después se usan
 // desde la copia: así la sesión se reconoce aunque abras la app sin conexión.
-const CACHE = "mis-libros-v4";
+const CACHE = "mis-libros-v5";
 const FILES = ["./", "index.html", "libros.js", "palabras.js", "nube.js", "nube-config.js", "pwa.js", "manifest.webmanifest",
   "icon.svg", "icon-180.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png"];
 

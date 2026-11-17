@@ -380,7 +380,8 @@
       '<div class="card filters-card"><input class="search" id="pq" type="search" placeholder="Buscar en mis palabras…" aria-label="Buscar en mis palabras">' +
         '<div class="filters"><label for="pl">Libro<select id="pl"></select></label>' +
         '<label for="po">Ordenar<select id="po"><option value="recientes">Más recientes</option><option value="az">A–Z</option></select></label></div>' +
-        '<div class="count" id="pcount"></div><p class="pal-sync" data-sync-estado></p></div>' +
+        '<div class="count" id="pcount"></div><p class="pal-sync" data-sync-estado></p>' +
+        '<div class="sheet-actions"><button type="button" class="btn" id="pdescargar"><span aria-hidden="true">⬇️</span> Descargar JSON</button></div></div>' +
       '<div class="pal-grid" id="plist"></div>';
     cont.querySelector("[data-sync-estado]").textContent = estadoSync.txt;
     var form = cont.querySelector("form");
@@ -392,6 +393,7 @@
     $("pq").addEventListener("input", function () { V.q = this.value; pintar(); });
     $("pl").addEventListener("change", function () { V.libro = this.value; pintar(); });
     $("po").addEventListener("change", function () { V.orden = this.value; pintar(); });
+    $("pdescargar").addEventListener("click", function () { descargarJSON(V.libro); });
     cont.addEventListener("click", function (e) {
       var d = e.target.closest("[data-borrar]");
       if (d) { if (confirmarBorrar(d)) { borrar(d.dataset.borrar); var c = d.closest(".pal-nueva"); if (c) c.innerHTML = ""; pintar(); } return; }
@@ -420,6 +422,33 @@
     tabPintar = pintar;
   }
   var tabPintar = null;
+
+  // Descarga las palabras como JSON agrupado por libro:
+  // { "Libro — Autor": [ { palabra, significado, oracion } ] }
+  // «oracion» es la frase del libro si la guardaste; si no, el ejemplo de Gemini.
+  function exportar(soloLibro) {
+    var out = {};
+    lista().filter(function (p) { return !soloLibro || p.libro === soloLibro; })
+      .sort(function (a, b) { return (!a.libro - !b.libro) || (a.libro || "").localeCompare(b.libro || "", "es") || a.palabra.localeCompare(b.palabra, "es"); })
+      .forEach(function (p) {
+        var ss = p.significados || [];
+        var k = p.libro || "Sin libro";
+        (out[k] || (out[k] = [])).push({
+          palabra: p.palabra,
+          significado: ss.length > 1 ? ss.map(function (x, i) { return (i + 1) + ". " + x.significado; }).join(" ") : (ss[0] ? ss[0].significado : ""),
+          oracion: p.frase || (ss[0] ? ss[0].ejemplo : "")
+        });
+      });
+    return out;
+  }
+  function descargarJSON(soloLibro) {
+    var blob = new Blob([JSON.stringify(exportar(soloLibro), null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "mis-palabras" + (soloLibro ? "-" + norm(soloLibro.split(" — ")[0]).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "") + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  }
 
   // Ajustes.
   function cuentaHTML() {
@@ -499,6 +528,7 @@
     renderTab: renderTab,
     repintarTab: function () { if (tabPintar && document.getElementById("plist")) tabPintar(); },
     montarAjustes: montarAjustes,
+    exportar: exportar,
     _mezclar: mezclar
   };
 })();
