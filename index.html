@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,600&display=swap">
 <style>
-/* Layout: pestañas (Inicio, Libros, Autores, Géneros) como la app de presupuesto; fichas de libro que abren un detalle desde abajo. */
+/* Layout: tres pestañas (Inicio, Libros, Palabras). En la compu van arriba como botones; en el celular, abajo como en una app. Las fichas de libro abren un detalle desde abajo. */
 :root {
   --bg: #F3F4F8; --surface: #FFFFFF; --ink: #1B1F2A; --muted: #5D6474; --line: #DADEE8; --soft: #E9ECF4;
   --accent: #2F45A8; --accent-ink: #FFFFFF; --accent-soft: #E6E9F7;
@@ -74,15 +74,20 @@ h3 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin: 
 .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 
 nav.tabs {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg);
-  display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  display: flex; gap: 4px; padding: 4px; background: var(--soft); border-radius: 14px; justify-self: start;
 }
 nav.tabs button {
-  font-weight: 600; font-size: 14px; color: var(--muted); background: none; border: 0;
-  border-bottom: 3px solid transparent; padding: 10px 14px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; font-size: 15px; color: var(--muted); background: none; border: 0;
+  border-radius: 10px; padding: 9px 18px; white-space: nowrap;
 }
-nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
-nav.tabs .n { font-weight: 500; font-size: 12px; color: var(--muted); margin-left: 4px; font-variant-numeric: tabular-nums; }
+nav.tabs button:hover { color: var(--ink); }
+nav.tabs button[aria-selected="true"] { color: var(--ink); background: var(--surface); box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+nav.tabs .ico { width: 20px; height: 20px; flex: none; }
+nav.tabs button[aria-selected="true"] .ico { color: var(--accent); }
+nav.tabs .n { font-weight: 500; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+nav.tabs .n:empty { display: none; }
 
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
 .grid2 { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
@@ -156,14 +161,8 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
 .mlabel { display: none; }
 .empty { padding: 40px 0; color: var(--muted); text-align: center; }
 
-/* Autores y géneros */
-.alist { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
-.aitem { display: grid; gap: 2px; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
-.aitem:hover { border-color: var(--accent); }
-.aitem .name { font-weight: 600; }
-.aitem .meta { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.aitem .mini { height: 5px; border-radius: 999px; background: var(--soft); overflow: hidden; margin-top: 6px; }
-.aitem .mini i { display: block; height: 100%; background: var(--ok); }
+/* Inicio: listas que se pueden ver completas */
+.mas { justify-self: start; }
 
 /* Detalle */
 .scrim { position: fixed; inset: 0; z-index: 50; background: var(--scrim); display: flex; align-items: flex-end; justify-content: center; }
@@ -248,10 +247,21 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   .filters label { flex: 1 1 140px; }
 }
 @media (min-width: 821px) { .c-meta { display: contents; } }
-@media (max-width: 480px) {
-  nav.tabs { gap: 0; }
-  nav.tabs button { padding: 10px 8px; font-size: 13px; flex: 1 1 auto; }
+@media (max-width: 640px) {
+  .wrap { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  nav.tabs {
+    position: fixed; top: auto; bottom: 0; left: 0; right: 0; z-index: 40;
+    justify-self: stretch; justify-content: space-around; gap: 0; border-radius: 0; background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 6px max(8px, env(safe-area-inset-left, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-right, 0px));
+  }
+  nav.tabs button { flex: 1 1 0; flex-direction: column; gap: 2px; padding: 6px 4px; font-size: 12px; border-radius: 10px; }
+  nav.tabs button[aria-selected="true"] { background: none; box-shadow: none; color: var(--accent); }
+  nav.tabs .ico { width: 24px; height: 24px; }
   nav.tabs .n { display: none; }
+  .filters label { flex: 1 1 calc(50% - 8px); min-width: 0; }
+}
+@media (max-width: 480px) {
   .bar { grid-template-columns: 90px minmax(0, 1fr) 34px; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet { animation: none; } }
@@ -267,12 +277,10 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     </div>
   </header>
 
-  <nav class="tabs" role="tablist">
-    <button type="button" role="tab" data-tab="inicio">Inicio</button>
-    <button type="button" role="tab" data-tab="libros">Libros<span class="n" id="n-libros"></span></button>
-    <button type="button" role="tab" data-tab="autores">Autores<span class="n" id="n-autores"></span></button>
-    <button type="button" role="tab" data-tab="generos">Géneros<span class="n" id="n-generos"></span></button>
-    <button type="button" role="tab" data-tab="palabras">Palabras<span class="n" id="n-palabras"></span></button>
+  <nav class="tabs" role="tablist" aria-label="Secciones">
+    <button type="button" role="tab" data-tab="inicio"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Inicio</span></button>
+    <button type="button" role="tab" data-tab="libros"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H19v-3"/><path d="M8 7h7"/></svg><span>Libros</span><span class="n" id="n-libros"></span></button>
+    <button type="button" role="tab" data-tab="palabras"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/><path d="M14 20h6"/></svg><span>Palabras</span><span class="n" id="n-palabras"></span></button>
   </nav>
 
   <!-- Inicio -->
@@ -298,11 +306,19 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
           <div class="bars" id="by-largo"></div>
         </div>
       </div>
-      <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
-          <h2>Géneros principales</h2><button class="linkbtn" type="button" data-go="generos">Ver todos</button>
+      <div class="grid2">
+        <div class="card">
+          <h2>Géneros</h2>
+          <div class="legend"><span class="l-own">Lo tengo</span><span class="l-rest">Me falta</span></div>
+          <div class="bars" id="by-gen"></div>
+          <button class="linkbtn mas" type="button" data-mas="gen"></button>
         </div>
-        <div class="bars" id="by-gen"></div>
+        <div class="card">
+          <h2>Autores</h2>
+          <div class="legend"><span class="l-own">Lo tengo</span><span class="l-rest">Me falta</span></div>
+          <div class="bars" id="by-autor"></div>
+          <button class="linkbtn mas" type="button" data-mas="autor"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -314,6 +330,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
         <input class="search" id="q" type="search" placeholder="Buscar por título, autor o de qué trata…" aria-label="Buscar">
         <div class="filters">
           <label for="f-genero">Género<select id="f-genero"></select></label>
+          <label for="f-autor">Autor<select id="f-autor"></select></label>
           <label for="f-dif">Dificultad<select id="f-dif"></select></label>
           <label for="f-largo">Extensión<select id="f-largo"></select></label>
           <label for="f-tengo">Lo tengo<select id="f-tengo">
@@ -335,7 +352,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
           </select></label>
           <button class="linkbtn" id="reset" type="button">Quitar filtros y orden</button>
         </div>
-        <div class="chips" id="chips"></div>
         <div class="count" id="count" aria-live="polite"></div>
       </div>
       <div class="list">
@@ -349,26 +365,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
         <div id="list"></div>
       </div>
     </div>
-  </section>
-
-  <!-- Autores -->
-  <section id="v-autores" hidden>
-    <div style="display:grid;gap:12px">
-      <div class="filters">
-        <input class="search" id="qa" type="search" placeholder="Buscar autor…" aria-label="Buscar autor" style="flex:1 1 220px;width:auto">
-        <label for="a-orden">Ordenar por<select id="a-orden">
-          <option value="n">Más libros</option>
-          <option value="az">Nombre (A–Z)</option>
-          <option value="own">Más tengo</option>
-        </select></label>
-      </div>
-      <div class="alist" id="alist"></div>
-    </div>
-  </section>
-
-  <!-- Géneros -->
-  <section id="v-generos" hidden>
-    <div class="alist" id="glist"></div>
   </section>
 
   <!-- Palabras -->
@@ -441,19 +437,17 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   var generosList = Object.keys(generos).map(function (k) { return generos[k]; }).sort(function (a, b) { return b.n - a.n || cmpEs(a.name, b.name); });
 
   $("n-libros").textContent = LIBROS.length;
-  $("n-autores").textContent = autoresList.length;
-  $("n-generos").textContent = generosList.length;
 
   // ---------- Pestañas ----------
-  var TABS = ["inicio", "libros", "autores", "generos", "palabras"];
+  var TABS = ["inicio", "libros", "palabras"];
   function go(tab) {
+    if (tab === "autores" || tab === "generos") tab = "libros"; // enlaces viejos
     if (TABS.indexOf(tab) === -1) tab = "inicio";
     S.tab = tab; save();
     if (location.hash !== "#" + tab) history.replaceState(null, "", "#" + tab);
     document.querySelectorAll("nav.tabs button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.tab === tab); });
     TABS.forEach(function (t) { $("v-" + t).hidden = t !== tab; });
     if (tab === "libros") renderLibros();
-    if (tab === "autores") renderAutores();
     if (tab === "palabras") Palabras.renderTab($("palabras-root"));
     window.scrollTo(0, 0);
   }
@@ -485,7 +479,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
       tile("Libros", LIBROS.length, "en tu lista", {}) +
       tile("Lo tengo", tengoN, pct + "% de la lista", { tengo: "si" }) +
       tile("Me faltan", LIBROS.length - tengoN, "por conseguir", { tengo: "no" }) +
-      '<button type="button" class="tile" data-go="autores"><span class="k">Autores</span><span class="v">' + autoresList.length + '</span><span class="s">distintos</span></button>';
+      '<button type="button" class="tile" data-go="palabras"><span class="k">Palabras</span><span class="v" id="tile-pal">' + Palabras.contar() + '</span><span class="s">guardadas</span></button>';
     $("own-pct").textContent = tengoN + " de " + LIBROS.length + " · " + pct + "%";
     $("own-bar").style.width = pct + "%";
     var cnt = function (pred) { var r = LIBROS.filter(pred); return { n: r.length, own: r.filter(function (b) { return b.tengo; }).length }; };
@@ -497,9 +491,23 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
       var c = cnt(function (b) { return b.largo === l; });
       return { label: l, n: c.n, own: c.own, f: { largo: l } };
     }));
-    $("by-gen").innerHTML = bars(generosList.slice(0, 8).map(function (g) {
-      return { label: g.name, n: g.n, own: g.own, f: { genero: g.name } };
-    }));
+    renderListas();
+  }
+  // Géneros y autores: los 8 con más libros, y «Ver todos» despliega el resto ahí mismo.
+  var abierto = { gen: false, autor: false };
+  var autoresTop = autoresList.slice().sort(function (a, b) { return b.n - a.n || cmpEs(a.name, b.name); });
+  function renderListas() {
+    var L = {
+      gen: { el: "by-gen", list: generosList, f: function (g) { return { genero: g.name }; }, que: "géneros" },
+      autor: { el: "by-autor", list: autoresTop, f: function (a) { return { autor: a.name }; }, que: "autores" }
+    };
+    Object.keys(L).forEach(function (k) {
+      var c = L[k], rows = abierto[k] ? c.list : c.list.slice(0, 8);
+      $(c.el).innerHTML = bars(rows.map(function (x) { return { label: x.name, n: x.n, own: x.own, f: c.f(x) }; }));
+      var btn = document.querySelector('[data-mas="' + k + '"]');
+      btn.hidden = c.list.length <= 8;
+      btn.textContent = abierto[k] ? "Ver menos" : "Ver los " + c.list.length + " " + c.que;
+    });
   }
   function renderLeyendo() {
     var b = Palabras.leyendo();
@@ -522,6 +530,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     if (a.dataset.ley === "palabra") { var i = document.querySelector("#d-palabras input[name=palabra]"); if (i) { i.scrollIntoView({ block: "center" }); i.focus(); } }
   });
   $("v-inicio").addEventListener("click", function (e) {
+    var m = e.target.closest("[data-mas]"); if (m) { abierto[m.dataset.mas] = !abierto[m.dataset.mas]; renderListas(); return; }
     var el = e.target.closest("[data-f]"); if (el) verLibros(JSON.parse(el.dataset.f));
   });
 
@@ -533,9 +542,12 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   $("f-dif").innerHTML = '<option value="">Todas</option>' + [1, 2, 3, 4, 5].filter(function (d) {
     return LIBROS.some(function (b) { return b.dificultad === d; });
   }).map(function (d) { return '<option value="' + d + '">' + d + "/5</option>"; }).join("");
+  $("f-autor").innerHTML = '<option value="">Todos</option>' + autoresList.slice().sort(function (a, b) { return cmpEs(a.name, b.name); }).map(function (a) {
+    return '<option value="' + esc(a.name) + '">' + esc(a.name) + " (" + a.n + ")</option>";
+  }).join("");
   $("f-largo").innerHTML = '<option value="">Todas</option>' + LARGOS.map(function (l) { return '<option value="' + l + '">' + l + "</option>"; }).join("");
 
-  var INPUTS = { q: "q", genero: "f-genero", dif: "f-dif", largo: "f-largo", tengo: "f-tengo", orden: "f-orden" };
+  var INPUTS = { q: "q", genero: "f-genero", autor: "f-autor", dif: "f-dif", largo: "f-largo", tengo: "f-tengo", orden: "f-orden" };
   function syncInputs() { Object.keys(INPUTS).forEach(function (k) { $(INPUTS[k]).value = S[k]; }); }
   Object.keys(INPUTS).forEach(function (k) {
     $(INPUTS[k]).addEventListener(k === "q" ? "input" : "change", function () { S[k] = this.value; save(); renderLibros(); });
@@ -544,7 +556,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     ["q", "genero", "dif", "largo", "tengo", "autor"].forEach(function (k) { S[k] = ""; });
     S.orden = DEF.orden; save(); syncInputs(); renderLibros();
   });
-  $("chips").addEventListener("click", function (e) { if (e.target.closest("[data-clear-autor]")) { S.autor = ""; save(); renderLibros(); } });
 
   var DCOL = ["", "var(--d1)", "var(--d2)", "var(--d3)", "var(--d4)", "var(--d5)"];
   function difHTML(d) {
@@ -572,7 +583,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
       var on = btn.dataset.sort === key && S.orden !== DEF.orden;
       btn.classList.toggle("active", on); btn.classList.toggle("desc", on && dir === -1);
     });
-    $("chips").innerHTML = S.autor ? '<button type="button" class="chip" data-clear-autor>Autor: ' + esc(S.autor) + ' <span aria-label="Quitar">✕</span></button>' : "";
     $("count").textContent = res.length === LIBROS.length ? "Mostrando los " + res.length + " libros" : res.length + " de " + LIBROS.length + " libros";
     if (!res.length) { $("list").innerHTML = '<p class="empty">Ningún libro coincide con estos filtros.</p>'; return; }
     var ley = Palabras.leyendo();
@@ -593,29 +603,6 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
     S.orden = k + "-" + (cur[0] === k ? (cur[1] === "asc" ? "desc" : "asc") : (k === "tengo" ? "desc" : "asc"));
     save(); syncInputs(); renderLibros();
   });
-
-  // ---------- Autores ----------
-  function renderAutores() {
-    var q = norm($("qa").value.trim()), o = $("a-orden").value;
-    var list = autoresList.filter(function (a) { return !q || norm(a.name).indexOf(q) !== -1; });
-    list.sort(o === "az" ? function (a, b) { return cmpEs(a.name, b.name); }
-      : o === "own" ? function (a, b) { return b.own - a.own || b.n - a.n || cmpEs(a.name, b.name); }
-      : function (a, b) { return b.n - a.n || cmpEs(a.name, b.name); });
-    $("alist").innerHTML = list.length ? list.map(function (a) {
-      return '<button type="button" class="aitem" data-autor="' + esc(a.name) + '"><span class="name">' + esc(a.name) +
-        '</span><span class="meta">' + plural(a.n, "libro", "libros") + " · tengo " + a.own + '</span><span class="mini"><i style="width:' + (a.own / a.n * 100) + '%"></i></span></button>';
-    }).join("") : '<p class="empty">Ningún autor coincide.</p>';
-  }
-  $("qa").addEventListener("input", renderAutores);
-  $("a-orden").addEventListener("change", renderAutores);
-  $("alist").addEventListener("click", function (e) { var a = e.target.closest("[data-autor]"); if (a) verLibros({ autor: a.dataset.autor }); });
-
-  // ---------- Géneros ----------
-  $("glist").innerHTML = generosList.map(function (g) {
-    return '<button type="button" class="aitem" data-genero="' + esc(g.name) + '"><span class="name">' + esc(g.name) +
-      '</span><span class="meta">' + plural(g.n, "libro", "libros") + " · tengo " + g.own + '</span><span class="mini"><i style="width:' + (g.own / g.n * 100) + '%"></i></span></button>';
-  }).join("");
-  $("glist").addEventListener("click", function (e) { var g = e.target.closest("[data-genero]"); if (g) verLibros({ genero: g.dataset.genero }); });
 
   // ---------- Detalle del libro ----------
   var lastFocus = null;
@@ -664,7 +651,7 @@ select { font-size: 14px; padding: 7px 8px; border: 1px solid var(--line); borde
   addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("scrim").hidden) cerrar(); });
 
   // ---------- Palabras ----------
-  function contarPalabras() { var n = Palabras.contar(); $("n-palabras").textContent = n || ""; }
+  function contarPalabras() { var n = Palabras.contar(); $("n-palabras").textContent = n || ""; var t = $("tile-pal"); if (t) t.textContent = n; }
   Palabras.onChange(function () {
     contarPalabras(); renderLeyendo();
     if (S.tab === "palabras") Palabras.repintarTab();
