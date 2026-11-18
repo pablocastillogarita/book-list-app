@@ -3,10 +3,13 @@
 App web ("Mis libros") con todos los libros de `datos/LISTA DE LIBROS.xlsx`: título, autor,
 género, dificultad, extensión, si lo tengo y de qué trata.
 
-- **Inicio:** resumen (cuántos tengo, por dificultad, extensión y género) y el libro que estoy leyendo.
-- **Libros:** buscador, filtros y orden (también tocando el título de cada columna).
-  Tocar un libro abre su ficha.
-- **Autores** y **Géneros:** tocar uno muestra sus libros.
+La app tiene tres pestañas (en el celular van abajo, como en una app):
+
+- **Inicio:** el libro que estoy leyendo y un resumen (cuántos tengo, palabras guardadas, por
+  dificultad, extensión, género y autor). Tocar una barra abre esos libros; «Ver todos»
+  despliega todos los géneros o autores.
+- **Libros:** buscador, filtros (género, autor, dificultad, extensión, si lo tengo) y orden
+  (también tocando el título de cada columna). Tocar un libro abre su ficha.
 - **Estoy leyendo:** en la ficha de un libro toca «📖 Lo estoy leyendo». Aparece arriba en
   Inicio con un botón para buscar palabras de ese libro, y se sincroniza igual que las palabras.
 - **Palabras:** en la ficha de un libro, escribe una palabra que no conozcas y Gemini te da
